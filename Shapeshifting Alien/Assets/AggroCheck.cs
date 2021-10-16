@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,13 +19,26 @@ public class AggroCheck : MonoBehaviour
 
     public static bool CheckAggro(GameObject self, GameObject target)
     {
-        //characterScript selfScript = self.GetComponent<characterScript>();
-        //characterScript targetScript = target.GetComponent<targetScript>();
-        //if(selfScript == null || targetScript == null){
-              return false;
-        //}
-        //if( targetScript.getType() in selfScript.getEnemyTypes() ){
-        //    return true;
-        //}
+        TypeCheckerDetectionTest selfScript = self.GetComponent<TypeCheckerDetectionTest>();
+        TypeCheckerDetectionTest targetScript = target.GetComponent<TypeCheckerDetectionTest>();
+        if(selfScript == null || targetScript == null){
+            return false;
+        }
+        if(Contained(selfScript.GetEnemyForms(), targetScript.GetForm())){
+            return true;
+        }
+        return false;
+    }
+
+    private static bool Contained( int[] container, int contained)
+    {
+        for( int i = 0; i < container.Length; i++)
+        {
+            if( container[i] == contained)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -30,8 +30,12 @@ public class Detection : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (currentEnemy != null && !CanSee(currentEnemy))
+        {
+            currentEnemy = null;
+        }
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, viewDist, characterMask);
-        Debug.Log(objects.Length + " Objects detected");
+        //Debug.Log(objects.Length + " Objects detected");
         foreach( Collider2D col in objects)
         {
             if (CanSee(col))
@@ -45,17 +49,16 @@ public class Detection : MonoBehaviour
             if (e.IsActiveEnemy() && !CanSee(e))
             {
                 e.SetActiveEnemy(false);
+                Debug.Log("set enemy deactive");
+                Report();
             }
             else if (!e.IsActiveEnemy() && e.TimeSinceSeen() >= memoryLength)
             {
                 enemies.Remove(e);
+                Debug.Log("enemy removed due to time");
+                Report();
                 i--;
             }
-        }
-
-        if(currentEnemy == null && enemies.Count > 0)
-        {
-            currentEnemy = (AggroEnemy)enemies[0];
         }
 
         if(currentEnemy != null)
@@ -69,20 +72,24 @@ public class Detection : MonoBehaviour
     //checks if a collider can be seen
     public bool CanSee(Collider2D col)
     {
+        if(col == null)
+        {
+            return false;
+        }
         Vector3 toCollider = col.transform.position - transform.position;
         float angle = Vector3.Angle(toCollider, transform.forward);
-        Debug.Log("object at angle " + angle + " from forward");
+        //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && col.gameObject != gameObject)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position, toCollider.normalized, out hit, toCollider.magnitude, ignoreCharacterMask))
             {
-                Debug.DrawRay(transform.position, toCollider, Color.green);
+                //Debug.DrawRay(transform.position, toCollider, Color.green);
                 return true;
             }
             else
             {
-                Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
+                //Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
             }
         }
         return false;
@@ -91,20 +98,24 @@ public class Detection : MonoBehaviour
     //checks if an AggroEnemy Can be seen
     public bool CanSee(AggroEnemy e)
     {
+        if(e == null)
+        {
+            return false;
+        }
         Vector3 toCollider = e.GetEnemy().transform.position - transform.position;
         float angle = Vector3.Angle(toCollider, transform.forward);
-        Debug.Log("object at angle " + angle + " from forward");
+        //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && e.GetEnemy().gameObject != gameObject)
         {
             RaycastHit hit;
             if (!Physics.Raycast(transform.position, toCollider.normalized, out hit, toCollider.magnitude, ignoreCharacterMask))
             {
-                Debug.DrawRay(transform.position, toCollider, Color.green);
+                //Debug.DrawRay(transform.position, toCollider, Color.green);
                 return true;
             }
             else
             {
-                Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
+                //Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
             }
         }
         return false;
@@ -123,11 +134,17 @@ public class Detection : MonoBehaviour
         {
             if (enemy.IsActiveEnemy())
             {
-                return;
+                if (!enemy.CorrectForm())
+                {
+                    enemy.SetForm(enemy.GetEnemy().GetComponent<TypeCheckerDetectionTest>().GetForm());
+                }
+                
             }
             else if (enemy.CorrectForm()) //if they are still in their last seen form, set them active again
             {
                 enemy.SetActiveEnemy(true);
+                Debug.Log("set enemy active");
+                Report();
             }
             else //if they are in a different form, remove them from the enemy list
             {
@@ -136,12 +153,20 @@ public class Detection : MonoBehaviour
         }
         else if (aggro && enemy != null) //if the target is hostile and on the list, set them active and update their form.
         {
-            //enemy.SetForm(enemy.GetEnemy.GetComponent<characterScript>().GetForm()); // set the enemy's known form to its current form.
-            enemy.SetActiveEnemy(true);
+            /** edit this to use enums */
+            if (!enemy.CorrectForm())
+            {
+                enemy.SetForm(enemy.GetEnemy().GetComponent<TypeCheckerDetectionTest>().GetForm()); // set the enemy's known form to its current form.
+                enemy.SetActiveEnemy(true);
+                Debug.Log("updated enemy form");
+                Report();
+            }
+            
             if (currentEnemy == null)
             {
                 currentEnemy = enemy;
             }
+            
         
         }
     }
@@ -149,18 +174,21 @@ public class Detection : MonoBehaviour
     //handles what to do when seeing a hostile character
     public virtual void OnSeeEnemy( AggroEnemy enemy )
     {
-
+        Debug.DrawRay(transform.position, enemy.GetEnemy().transform.position - transform.position, Color.blue);
     }
 
     //adds an enemy to the list of AggroEnemies
     private void AddEnemy(GameObject enemy)
     {
-        //AggroEnemy newEnemy = new AggroEnemy(enemy, enemy.GetComponent<characterScript>().GetForm()
-        //enemies.Add(newEnemy);
+        /** edit this to use enums */
+        AggroEnemy newEnemy = new AggroEnemy(enemy, enemy.GetComponent<TypeCheckerDetectionTest>().GetForm());
+        enemies.Add(newEnemy);
         if (currentEnemy == null)
         {
-            //currentEnemy = newEnemy;
+            currentEnemy = newEnemy;
         }
+        Debug.Log("new enemy added");
+        Report();
     }
 
     //removes an enemy from the list of AggroEnemies
@@ -171,6 +199,8 @@ public class Detection : MonoBehaviour
         {
             currentEnemy = null;
         }
+        Debug.Log("enemy removed");
+        Report();
     }
 
     //looks for an AggroEnemy with the given target, and returns it.
@@ -187,8 +217,18 @@ public class Detection : MonoBehaviour
         return null;
     }
 
+    private void Report()
+    {
+        string report = "current enemies: " + enemies.Count + "\n";
+        foreach( AggroEnemy e in enemies )
+        {
+            report += "enemy - known form: " + e.GetForm() + ", actual form: " + e.GetEnemy().GetComponent<TypeCheckerDetectionTest>().GetForm() + ", active: " + e.IsActiveEnemy() + ", elapsed time: " + e.TimeSinceSeen() + "\n";
+        }
+        Debug.Log(report);
+    }
+
     // Class for holding an enemy, the form that this character remembers them in, and whether they are still an active threat or not
-    public class AggroEnemy : MonoBehaviour
+    public class AggroEnemy
     {
         private GameObject enemy;
         private int form;
@@ -243,9 +283,10 @@ public class Detection : MonoBehaviour
         //checks if the last known form is the current form
         public bool CorrectForm()
         {
-            //if(form == enemy.GetComponent<characterScript>.GetForm(){
-            //   return true
-            //}
+            /** edit this to use enums */
+            if(form == enemy.GetComponent<TypeCheckerDetectionTest>().GetForm()){
+                return true;
+            }
             return false;
         }
     }
