@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Movement speed
     public float moveSpeed = 5f;
 
+    //Use body to move position
     public Rigidbody2D body;
+
+    //Sets parameters to be used in the animation controller
     public Animator animator;
 
+    //Movement vector
     Vector2 movement;
-    public bool flipped = false;
+
+    //Determines if the player is facing right
+    bool flipped = false;
 
     private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        //Flip player when facing right
         if (movement.x < 0 && flipped)
             FlipScaleX();
         else if (movement.x > 0 && !flipped)
             FlipScaleX();
 
-            animator.SetFloat("Horizontal", movement.x);
+        //Set appropriate parameters
+        animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }

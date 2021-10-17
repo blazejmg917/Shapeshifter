@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Shapeshift : MonoBehaviour
 { 
+
+    //The different forms that the player can shapeshift into
     public enum Forms { Alien, Miner, Farmer, Outlaw, Lawman };
 
+    //The current form the player is in
     public Forms currentForm = Forms.Miner;
+
+    //Sets form type parameter in animation controller
     public Animator animator;
     void Update()
     {
