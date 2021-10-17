@@ -15,9 +15,9 @@ public class projectile : MonoBehaviour
     [Tooltip("how much damage the projectile will do when colliding with a character")]
     public float damage = 1;
     [Tooltip("the character layer, used to determine what this object can damage")]
-    public LayerMask characterLayer;
+    public int characterLayer;
     [Tooltip("the obstacle layer, used to determine what this object can collide with")]
-    public LayerMask obstacleLayer;
+    public int obstacleLayer;
     [Tooltip("the player's tag, ensures the player can always be hit by the other characters regardless of form")]
     public string playerTag;
     [Tooltip("the form of creature that threw this object, used to determine what this object can damage")]
@@ -34,26 +34,32 @@ public class projectile : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = transform.forward.normalized * speed;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(stickDuration < 0)
+        if( duration < 0)
         {
             Destroy(gameObject);
         }
         if (collided)
         {
+            if(stickDuration < 0)
+            {
+                Destroy(gameObject);
+            }
             rb.velocity = Vector2.zero;
-            transform.position = collisionObject.transform.position + collisionOffset;
+            transform.position = collisionObject.transform.position - collisionOffset;
             stickDuration -= Time.fixedDeltaTime;
         }
+        duration -= Time.fixedDeltaTime;
+
     }
 
     public void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("collision");
         if (collided)
         {
             return;
@@ -71,6 +77,7 @@ public class projectile : MonoBehaviour
 
     private void CharacterCollision(GameObject character)
     {
+        Debug.Log("collision with character");
         /** change this to deal with enums */
         if(character.tag == playerTag || !(character.GetComponent<TypeCheckerDetectionTest>().GetForm() == throwerForm))
         {
@@ -86,9 +93,20 @@ public class projectile : MonoBehaviour
 
     private void ObstacleCollision(GameObject obstacle)
     {
+        Debug.Log("collision with obstacle");
         collided = true;
         collisionObject = obstacle;
         collisionOffset = obstacle.transform.position - transform.position;
+    }
+
+    public void SetDirection(Vector3 heading)
+    {
+        Debug.Log(heading);
+        if(rb == null)
+        {
+            rb = gameObject.GetComponent<Rigidbody2D>();
+        }
+        rb.velocity = heading.normalized * speed;
     }
 
 }

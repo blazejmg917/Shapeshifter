@@ -175,6 +175,7 @@ public class Detection : MonoBehaviour
     public virtual void OnSeeEnemy( AggroEnemy enemy )
     {
         Debug.DrawRay(transform.position, enemy.GetEnemy().transform.position - transform.position, Color.blue);
+        gameObject.GetComponent<EnemyAttack>().SetTarget(enemy.GetEnemy());
     }
 
     //adds an enemy to the list of AggroEnemies
