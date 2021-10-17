@@ -1,0 +1,18 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	74850937	MusicState_01			\Default Work Unit\MusicState_01	
+
+State	ID	Name	State Group			Notes
+	554650843	SpaceShip	MusicState_01			
+	748895195	None	MusicState_01			
+	3091570009	Town	MusicState_01			
+	3424056949	Nowhere	MusicState_01			
+	3829230193	WildCountry	MusicState_01			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	4267419003	Master Audio Bus_01			\Default Work Unit\Master Audio Bus_01	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Disguise_Switch" ID="{FA858DE4-2F75-4A96-855A-D8824562E4CA}"/>
+				<Event Name="Town_BG_01" ID="{5BCB3D10-0A6A-441C-9DBC-F474D363AB22}"/>
+				<Event Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}"/>
+				<Event Name="Spaceship_BG_01" ID="{00222A5F-D7FB-4E4E-8DD4-93E0FC498DDD}"/>
+				<Event Name="Music_Spaceship_01" ID="{0290CA14-2950-40D5-A032-86EA4AC12A7E}">
+					<ChildrenList>
+						<Action Name="" ID="{A960B3C8-F138-4B6B-A0F6-B65EA67C5526}" ShortID="186875410">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spaceship" ID="{EBCFC784-A115-4683-884C-DA143CFA64EF}" WorkUnitID="{308614BA-2721-4F52-9FDF-F2F1A8D5869D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

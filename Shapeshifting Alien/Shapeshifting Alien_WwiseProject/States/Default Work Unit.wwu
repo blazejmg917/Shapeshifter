@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{224412E3-E277-4D05-89AA-407312D4FE87}" SchemaVersion="103">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{224412E3-E277-4D05-89AA-407312D4FE87}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="MusicState_01" ID="{D2E6EFFF-90B2-4B0D-B942-4A7C8750D1B7}">
+					<ChildrenList>
+						<State Name="None" ID="{ED746894-080E-4B1E-9C72-FF158AED4344}"/>
+						<State Name="Town" ID="{A6ADD063-74F9-4E94-865F-53609B6F875B}"/>
+						<State Name="WildCountry" ID="{77D6EBE9-A3D6-4B1D-AFFF-592FFDC393DC}"/>
+						<State Name="SpaceShip" ID="{D487122F-F073-487A-B55F-4CFE44B0D256}"/>
+						<State Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

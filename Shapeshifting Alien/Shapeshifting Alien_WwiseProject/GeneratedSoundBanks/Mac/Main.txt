@@ -1,0 +1,22 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3041231427	Music_Spaceship			\Default Work Unit\Music_Spaceship	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1021618141	MusicState			\Default Work Unit\MusicState	
+
+State	ID	Name	State Group			Notes
+	554650843	SpaceShip	MusicState			
+	748895195	None	MusicState			
+	3091570009	Town	MusicState			
+	3424056949	Nowhere	MusicState			
+	3829230193	WildCountry	MusicState			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	147010493	WildCountry	MusicState	\Interactive Music Hierarchy\Default Work Unit\Spaceship		
+	425454209	Nowhere	MusicState	\Interactive Music Hierarchy\Default Work Unit\Spaceship		
+	1014271576	Town	MusicState	\Interactive Music Hierarchy\Default Work Unit\Spaceship		
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	391330704	Spaceship synth 	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Spaceship synth _D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship\Spaceship synth\Spaceship synth 		9708908
+	702907000	Spaceship_W_solo	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Spaceship_W_solo_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship\Spaceship_W_solo\Spaceship_W_solo		9273536
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{61ADE013-72FE-4E4B-AED9-E65D3305AC24}" SchemaVersion="103">
+	<Presets>
+		<WorkUnit Name="Factory Spatial Audio" ID="{61ADE013-72FE-4E4B-AED9-E65D3305AC24}" PersistMode="Standalone">
+			<ChildrenList>
+				<AuxBus Name="Room Auxiliary Bus_01" ID="{29CC8C67-D986-4EF5-BB33-119E654EA23D}">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="EnableDiffraction" Type="bool" Value="True"/>
+						<Property Name="ListenerRelativeRouting" Type="bool" Value="True"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise_RoomVerb_(Custom)" ID="{2D498AA7-E6FE-4E37-8B6E-A97DF4E83DDE}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3"/>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ObjectLists/>
+				</AuxBus>
+			</ChildrenList>
+		</WorkUnit>
+	</Presets>
+</WwiseDocument>
