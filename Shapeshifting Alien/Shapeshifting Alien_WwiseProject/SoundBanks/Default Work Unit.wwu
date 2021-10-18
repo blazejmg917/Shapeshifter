@@ -4,7 +4,14 @@
 		<WorkUnit Name="Default Work Unit" ID="{B5A87806-D663-4C43-B6BA-09D77E63D896}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="Main_01" ID="{AD28E421-BDD5-4060-B9D2-5757B7C6C70B}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Music_Spaceship_01" ID="{0290CA14-2950-40D5-A032-86EA4AC12A7E}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Desert" ID="{9833F631-7A20-422C-9129-B4ED274C5FB9}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Spaceship" ID="{1877F416-35B6-4369-8E0E-A4ED8D94028E}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="On_Start" ID="{71B068CD-EB9D-4490-B6DA-E9267BDB27BE}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Desert_Music" ID="{1CD3C94F-2B32-4B9A-AB93-1BF0CA556B4A}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

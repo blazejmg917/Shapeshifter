@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Wind_Base" ID="{5789FEA4-FC33-4596-8C07-216E16A49BE3}" ShortID="472818420">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Wind_Base" ID="{4B992D33-0094-44BA-809D-86FCC5F024D1}">
+							<Language>SFX</Language>
+							<AudioFile>Wind_Base.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="547689286"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="MusicState_01" ID="{D2E6EFFF-90B2-4B0D-B942-4A7C8750D1B7}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}"/>
+								<CustomState Name="" ID="{50D824F2-3A08-45C0-BD6E-A5C241D1F651}" ShortID="955061725"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="SpaceShip" ID="{D487122F-F073-487A-B55F-4CFE44B0D256}"/>
+								<CustomState Name="" ID="{A7888ABF-F2B7-428E-B367-7A5C1E42DB08}" ShortID="38880527"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="WildCountry" ID="{77D6EBE9-A3D6-4B1D-AFFF-592FFDC393DC}"/>
+								<CustomState Name="" ID="{9B2E3238-02DD-4622-BE3C-331D2FEE4BDA}" ShortID="966127741"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Town" ID="{A6ADD063-74F9-4E94-865F-53609B6F875B}"/>
+								<CustomState Name="" ID="{332F9CCE-BEE8-4C46-8B90-7E5700AF5E0A}" ShortID="611094056"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Wind_Base" ID="{4B992D33-0094-44BA-809D-86FCC5F024D1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

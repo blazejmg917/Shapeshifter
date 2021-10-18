@@ -1,0 +1,34 @@
+Event	ID	Name			Wwise Object Path	Notes
+	468925930	Desert_BG_01			\Default Work Unit\Desert_BG_01	
+	554650843	Spaceship			\Default Work Unit\Spaceship	
+	1850388778	Desert			\Default Work Unit\Desert	
+	2236058871	On_Start			\Default Work Unit\On_Start	
+	3033951223	Music_Spaceship_01			\Default Work Unit\Music_Spaceship_01	
+	3175006835	Spaceship_BG_01			\Default Work Unit\Spaceship_BG_01	
+	3649627898	Desert_Music			\Default Work Unit\Desert_Music	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	74850937	MusicState_01			\Default Work Unit\MusicState_01	
+
+State	ID	Name	State Group			Notes
+	554650843	SpaceShip	MusicState_01			
+	748895195	None	MusicState_01			
+	3091570009	Town	MusicState_01			
+	3424056949	Nowhere	MusicState_01			
+	3829230193	WildCountry	MusicState_01			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	271959507	SpaceShip	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST		
+	356287144	WildCountry	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene		
+	358974977	Town	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene		
+	430140188	Town	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST		
+	799652391	Nowhere	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST		
+	908355086	Nowhere	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene		
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	527206869	Explore ST	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Explore ST_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST\Explore ST		13322516
+	547689286	Wind_Base	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Wind_Base_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Wind_Base		4484908
+	612476385	Spaceship_W_solo	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Spaceship_W_solo_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene\Spaceship_W_solo\Spaceship_W_solo		9273536
+	705485986	Spaceship synth 	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Spaceship synth _D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene\Spaceship synth\Spaceship synth 		9708908
+	891174479	Spaceship Bells	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Mac\SFX\Spaceship Bells_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene\Spaceship Bells\Spaceship Bells		7836356
+

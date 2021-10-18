@@ -5,14 +5,117 @@
 			<ChildrenList>
 				<Event Name="Disguise_Switch" ID="{FA858DE4-2F75-4A96-855A-D8824562E4CA}"/>
 				<Event Name="Town_BG_01" ID="{5BCB3D10-0A6A-441C-9DBC-F474D363AB22}"/>
-				<Event Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}"/>
+				<Event Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}">
+					<ChildrenList>
+						<Action Name="" ID="{06A3EEC0-4964-46B3-A4D7-8960C2889028}" ShortID="1026571938">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wind_Base" ID="{5789FEA4-FC33-4596-8C07-216E16A49BE3}" WorkUnitID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="Spaceship_BG_01" ID="{00222A5F-D7FB-4E4E-8DD4-93E0FC498DDD}"/>
 				<Event Name="Music_Spaceship_01" ID="{0290CA14-2950-40D5-A032-86EA4AC12A7E}">
 					<ChildrenList>
-						<Action Name="" ID="{A960B3C8-F138-4B6B-A0F6-B65EA67C5526}" ShortID="186875410">
+						<Action Name="" ID="{42B51F40-0E11-4CB5-8838-4679BAB990B8}" ShortID="522995672">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Spaceship" ID="{EBCFC784-A115-4683-884C-DA143CFA64EF}" WorkUnitID="{308614BA-2721-4F52-9FDF-F2F1A8D5869D}"/>
+									<ObjectRef Name="Spaceship_Scene" ID="{389E6D84-1DC3-462D-A705-27977A3DE78C}" WorkUnitID="{0DF01598-4185-4D2B-BD59-DE67D0816FF6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Spaceship" ID="{1877F416-35B6-4369-8E0E-A4ED8D94028E}">
+					<ChildrenList>
+						<Action Name="" ID="{A737D910-BF1D-4A38-BBC3-E5CDDE635952}" ShortID="560225458">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Spaceship_01" ID="{0290CA14-2950-40D5-A032-86EA4AC12A7E}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{92065EC8-8BDB-4B85-A995-D4E48CFDC923}" ShortID="86824542">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spaceship_BG_01" ID="{00222A5F-D7FB-4E4E-8DD4-93E0FC498DDD}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Desert" ID="{9833F631-7A20-422C-9129-B4ED274C5FB9}">
+					<ChildrenList>
+						<Action Name="" ID="{4E39CA20-E833-4201-8C9F-B53CC9A74A7F}" ShortID="560348608">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Desert_Music" ID="{1CD3C94F-2B32-4B9A-AB93-1BF0CA556B4A}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F3B6F4BD-A355-4FC7-9A96-F44D27ABE822}" ShortID="220123562">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Desert_Music" ID="{1CD3C94F-2B32-4B9A-AB93-1BF0CA556B4A}">
+					<ChildrenList>
+						<Action Name="" ID="{A0077B54-3401-4097-BF2B-2A07FAB797E4}" ShortID="360837934">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Desert" ID="{959DE850-1E0F-42A1-960F-8F04F8E79965}" WorkUnitID="{0DF01598-4185-4D2B-BD59-DE67D0816FF6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="On_Start" ID="{71B068CD-EB9D-4490-B6DA-E9267BDB27BE}">
+					<ChildrenList>
+						<Action Name="" ID="{44A687E0-DC5D-4144-88AD-5AB7C33FCA1D}" ShortID="755365595">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Spaceship" ID="{1877F416-35B6-4369-8E0E-A4ED8D94028E}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EEDD6109-A459-45A3-A052-D02C89793823}" ShortID="654814200">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Desert" ID="{9833F631-7A20-422C-9129-B4ED274C5FB9}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{318E6A94-47C6-470B-8919-C3C2CC238FE4}" ShortID="913666344">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}" WorkUnitID="{224412E3-E277-4D05-89AA-407312D4FE87}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

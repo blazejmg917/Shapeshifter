@@ -11,6 +11,17 @@
 
 namespace AK
 {
+    namespace EVENTS
+    {
+        static const AkUniqueID DESERT = 1850388778U;
+        static const AkUniqueID DESERT_BG_01 = 468925930U;
+        static const AkUniqueID DESERT_MUSIC = 3649627898U;
+        static const AkUniqueID MUSIC_SPACESHIP_01 = 3033951223U;
+        static const AkUniqueID ON_START = 2236058871U;
+        static const AkUniqueID SPACESHIP = 554650843U;
+        static const AkUniqueID SPACESHIP_BG_01 = 3175006835U;
+    } // namespace EVENTS
+
     namespace STATES
     {
         namespace MUSICSTATE_01

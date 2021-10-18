@@ -11,6 +11,38 @@
 						<State Name="SpaceShip" ID="{D487122F-F073-487A-B55F-4CFE44B0D256}"/>
 						<State Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}"/>
 					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}"/>
+							<EndState Name="Town" ID="{A6ADD063-74F9-4E94-865F-53609B6F875B}"/>
+							<Time>1</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="SpaceShip" ID="{D487122F-F073-487A-B55F-4CFE44B0D256}"/>
+							<EndState Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}"/>
+							<Time>1</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="WildCountry" ID="{77D6EBE9-A3D6-4B1D-AFFF-592FFDC393DC}"/>
+							<EndState Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}"/>
+							<Time>1</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="WildCountry" ID="{77D6EBE9-A3D6-4B1D-AFFF-592FFDC393DC}"/>
+							<EndState Name="Town" ID="{A6ADD063-74F9-4E94-865F-53609B6F875B}"/>
+							<Time>1</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="SpaceShip" ID="{D487122F-F073-487A-B55F-4CFE44B0D256}"/>
+							<EndState Name="WildCountry" ID="{77D6EBE9-A3D6-4B1D-AFFF-592FFDC393DC}"/>
+							<Time>1</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+					</TransitionList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>

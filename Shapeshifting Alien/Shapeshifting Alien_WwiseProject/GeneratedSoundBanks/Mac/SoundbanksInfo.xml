@@ -11,15 +11,76 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3502085001">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2405994309">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3534669624" Language="SFX" Hash="2073991286">
+		<SoundBank Id="3534669624" Language="SFX" Hash="2305543662">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main_01</ObjectPath>
 			<ShortName>Main_01</ShortName>
 			<Path>Main_01.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1850388778" Name="Desert" ObjectPath="\Events\Default Work Unit\Desert" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="468925930" Name="Desert_BG_01" ObjectPath="\Events\Default Work Unit\Desert_BG_01"/>
+						<ActionPostEventEntry Id="3649627898" Name="Desert_Music" ObjectPath="\Events\Default Work Unit\Desert_Music"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="468925930" Name="Desert_BG_01" ObjectPath="\Events\Default Work Unit\Desert_BG_01" DurationType="OneShot" DurationMin="23.358562" DurationMax="23.358562">
+					<IncludedMemoryFiles>
+						<File Id="547689286" Language="SFX">
+							<ShortName>Wind_Base.wav</ShortName>
+							<Path>SFX/Wind_Base_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3649627898" Name="Desert_Music" ObjectPath="\Events\Default Work Unit\Desert_Music" DurationType="OneShot" DurationMin="977.962585" DurationMax="977.962585">
+					<IncludedMemoryFiles>
+						<File Id="527206869" Language="SFX">
+							<ShortName>Explore ST.wav</ShortName>
+							<Path>SFX/Explore ST_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3033951223" Name="Music_Spaceship_01" ObjectPath="\Events\Default Work Unit\Music_Spaceship_01" DurationType="OneShot" DurationMin="571.936279" DurationMax="571.936279">
+					<IncludedMemoryFiles>
+						<File Id="612476385" Language="SFX">
+							<ShortName>Spaceship_W_solo.wav</ShortName>
+							<Path>SFX/Spaceship_W_solo_D79FB2B7.wem</Path>
+						</File>
+						<File Id="705485986" Language="SFX">
+							<ShortName>Spaceship synth .wav</ShortName>
+							<Path>SFX/Spaceship synth _D79FB2B7.wem</Path>
+						</File>
+						<File Id="891174479" Language="SFX">
+							<ShortName>Spaceship Bells.wav</ShortName>
+							<Path>SFX/Spaceship Bells_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2236058871" Name="On_Start" ObjectPath="\Events\Default Work Unit\On_Start" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="554650843" Name="Spaceship" ObjectPath="\Events\Default Work Unit\Spaceship"/>
+						<ActionPostEventEntry Id="1850388778" Name="Desert" ObjectPath="\Events\Default Work Unit\Desert"/>
+					</ActionPostEvent>
+					<ActionSetState>
+						<ActionSetStateEntry Id="3424056949" Name="Nowhere" ObjectPath="\States\Default Work Unit\MusicState_01\Nowhere"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="554650843" Name="Spaceship" ObjectPath="\Events\Default Work Unit\Spaceship" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="3033951223" Name="Music_Spaceship_01" ObjectPath="\Events\Default Work Unit\Music_Spaceship_01"/>
+						<ActionPostEventEntry Id="3175006835" Name="Spaceship_BG_01" ObjectPath="\Events\Default Work Unit\Spaceship_BG_01"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="3175006835" Name="Spaceship_BG_01" ObjectPath="\Events\Default Work Unit\Spaceship_BG_01" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+			</IncludedEvents>
+			<StateGroups>
+				<StateGroup Id="3424056949" Name="Nowhere" ObjectPath="\States\Default Work Unit\MusicState_01\Nowhere" GUID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}">
+					<States/>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
