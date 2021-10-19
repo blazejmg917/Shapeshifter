@@ -19,8 +19,8 @@ public class AggroCheck : MonoBehaviour
 
     public static bool CheckAggro(GameObject self, GameObject target)
     {
-        TypeCheckerDetectionTest selfScript = self.GetComponent<TypeCheckerDetectionTest>();
-        TypeCheckerDetectionTest targetScript = target.GetComponent<TypeCheckerDetectionTest>();
+        CharacterForm selfScript = self.GetComponent<CharacterForm>();
+        CharacterForm targetScript = target.GetComponent<CharacterForm>();
         if(selfScript == null || targetScript == null){
             return false;
         }
@@ -30,7 +30,7 @@ public class AggroCheck : MonoBehaviour
         return false;
     }
 
-    private static bool Contained( int[] container, int contained)
+    private static bool Contained( Shapeshift.Forms[] container, Shapeshift.Forms contained)
     {
         for( int i = 0; i < container.Length; i++)
         {

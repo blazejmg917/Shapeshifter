@@ -21,7 +21,7 @@ public class projectile : MonoBehaviour
     [Tooltip("the player's tag, ensures the player can always be hit by the other characters regardless of form")]
     public string playerTag;
     [Tooltip("the form of creature that threw this object, used to determine what this object can damage")]
-    public int throwerForm;
+    public Shapeshift.Forms throwerForm;
     //whether or not this object has already collided with something
     private bool collided = false;
     //used to have some projectiles stick to the characters while they move.
@@ -45,7 +45,7 @@ public class projectile : MonoBehaviour
         }
         if (collided)
         {
-            if(stickDuration < 0)
+            if(stickDuration <= 0)
             {
                 Destroy(gameObject);
             }
@@ -77,9 +77,9 @@ public class projectile : MonoBehaviour
 
     private void CharacterCollision(GameObject character)
     {
-        Debug.Log("collision with character");
+        //Debug.Log("collision with character");
         /** change this to deal with enums */
-        if(character.tag == playerTag || !(character.GetComponent<TypeCheckerDetectionTest>().GetForm() == throwerForm))
+        if(character.tag == playerTag || !(character.GetComponent<CharacterForm>().GetForm() == throwerForm))
         {
             collided = true;
             collisionObject = character;

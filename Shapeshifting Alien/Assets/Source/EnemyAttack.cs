@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void Attack()
     {
         if (target != null)
         {
@@ -45,6 +45,11 @@ public class EnemyAttack : MonoBehaviour
     public void SetTarget(GameObject target)
     {
         this.target = target;
+    }
+
+    public GameObject GetTarget()
+    {
+        return target;
     }
 
     private void Fire()
