@@ -28,7 +28,7 @@ public class Detection : MonoBehaviour
         ignoreCharacterMask = ~characterMask;
     }
     // The general detection called by an enemy
-    public void Detect()
+    public GameObject Detect()
     {
         //show FOV in gizmos
         ShowView();
@@ -75,10 +75,12 @@ public class Detection : MonoBehaviour
         if(currentEnemy != null)
         {
             OnSeeEnemy(currentEnemy);
+            return currentEnemy.GetEnemy();
         }
         else
         {
-            OnNotSeeEnemy();
+            //OnNotSeeEnemy();
+            return null;
         }
 
 
@@ -176,7 +178,32 @@ public class Detection : MonoBehaviour
         return false;
     }
 
-    //sees if the current enemy character can be found to the left or right of this 
+    //checks if the target can be seen outside of the FOV, and returns the angle between the character's current direction and the target
+    public float SearchForTarget(GameObject target)
+    {
+        if (target == null)
+        {
+            return 0f;
+        }
+            Vector3 toCollider = target.transform.position - transform.position;
+            float angle = Vector3.Angle(toCollider, transform.up);
+            if (angle <= viewAngle + 90 && toCollider.magnitude <= viewDist && target != gameObject)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, toCollider.normalized, toCollider.magnitude, ignoreCharacterMask + ~Physics2D.IgnoreRaycastLayer);
+                if (hit.collider == null)
+                {
+                    Debug.DrawRay(transform.position, toCollider, Color.green);
+                //OnSeeCharacter(target);
+                    return Vector2.SignedAngle(transform.up, toCollider);
+                }
+                else
+                {
+                    Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
+                }
+            }
+            return 0f;
+
+    }
 
     //handles what to do when a character is seen
     public void OnSeeCharacter(GameObject character)
@@ -236,18 +263,19 @@ public class Detection : MonoBehaviour
     public virtual void OnSeeEnemy( AggroEnemy enemy )
     {
         Debug.DrawRay(transform.position, enemy.GetEnemy().transform.position - transform.position, Color.blue);
-        gameObject.GetComponent<EnemyAttack>().SetTarget(enemy.GetEnemy());
+        //gameObject.GetComponent<EnemyAttack>().SetTarget(enemy.GetEnemy());
     }
 
     //handles what to do when there is not an active hostile enemy
     public virtual void OnNotSeeEnemy()
     {
-        gameObject.GetComponent<EnemyAttack>().SetTarget(null);
+        //gameObject.GetComponent<EnemyAttack>().SetTarget(null);
     }
 
     //adds an enemy to the list of AggroEnemies
     private void AddEnemy(GameObject enemy)
     {
+        
         /** edit this to use enums */
         AggroEnemy newEnemy = new AggroEnemy(enemy, enemy.GetComponent<CharacterForm>().GetForm());
         enemies.Add(newEnemy);

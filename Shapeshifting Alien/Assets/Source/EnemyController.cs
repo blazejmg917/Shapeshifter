@@ -23,8 +23,10 @@ public class EnemyController : MonoBehaviour
     private float waitTimer = 0;
     //the directions that the character can face
     public enum Directions { Up, Right, Down, Left};
-    [Tooltip("The direction this enemy is facing")]
-    public Directions enemyDir = Directions.Down;
+    [Tooltip("The direction this enemy starts out facing")]
+    public Directions enemyStartDir = Directions.Down;
+    //the current direction the enemy is facing
+    private Directions enemyDir = Directions.Down;
     //the four direction vectors
     private static Vector3 upDir;
     private static Vector3 rightDir;
@@ -36,6 +38,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyDir = enemyStartDir;
+        SetRotation((int)enemyStartDir);
         if (detectScript == null)
         {
             detectScript = gameObject.GetComponent<Detection>();
@@ -58,27 +62,55 @@ public class EnemyController : MonoBehaviour
         {
             return;
         }
-        detectScript.Detect();
-        if (detectScript.IsCurrentEnemy())
+        GameObject target = detectScript.Detect();
+        if (target != null)
         {
-            attackScript.Attack();
-            waitTimer = waitTime;
-
+            AttackEnemy(target);
         }
         else
         {
-            if (waitTimer <= 0)
+            float angToTarget = detectScript.SearchForTarget(attackScript.GetTarget());
+            if (!Mathf.Approximately(angToTarget, 0f))
             {
-                Movement();
+                if (angToTarget > 0)
+                {
+                    RotateEnemy(false);
+                }
+                else
+                {
+                    RotateEnemy(true);
+                }
+                AttackEnemy(target);
             }
             else
             {
-                waitTimer -= Time.fixedDeltaTime;
+                attackScript.SetTarget(null);
+                if (waitTimer <= 0)
+                {
+                    Movement();
+                }
+                else
+                {
+                    waitTimer -= Time.fixedDeltaTime;
+
+                }
             }
         }
         
         
     }
+
+    //handles what to do when there is no enemy
+
+
+    //handles what to do if there is an enemy found
+    public void AttackEnemy(GameObject target)
+    {
+        attackScript.SetTarget(target);
+        attackScript.Attack();
+        waitTimer = waitTime;
+    }
+
 
     //handles normal movement if there isn't an active enemy
     public void Movement()
@@ -100,6 +132,10 @@ public class EnemyController : MonoBehaviour
                 int newDir = Random.Range(minInclusive: 0, maxExclusive: 4);
                 SetRotation(newDir);
                 moveTimer = moveDelay;
+            }
+            else
+            {
+                SetRotation((int)enemyStartDir);
             }
         }
         else

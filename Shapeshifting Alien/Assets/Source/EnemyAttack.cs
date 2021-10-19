@@ -47,6 +47,11 @@ public class EnemyAttack : MonoBehaviour
         this.target = target;
     }
 
+    public GameObject GetTarget()
+    {
+        return target;
+    }
+
     private void Fire()
     {
         GameObject proj = Instantiate(projectile, position: transform.position, rotation: transform.rotation);
