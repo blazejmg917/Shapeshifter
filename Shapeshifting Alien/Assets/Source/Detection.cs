@@ -27,40 +27,11 @@ public class Detection : MonoBehaviour
     {
         ignoreCharacterMask = ~characterMask;
     }
-    // Update is called once per frame
-    void FixedUpdate()
+    // The general detection called by an enemy
+    public void Detect()
     {
         //show FOV in gizmos
-        RaycastHit2D hitM = Physics2D.Raycast(transform.position, transform.up, distance: viewDist);
-        if (hitM.collider != null)
-        {
-            Debug.DrawRay(transform.position, transform.up.normalized * hitM.distance, Color.yellow);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.up.normalized * viewDist, Color.yellow);
-        }
-        Vector3 right = (Quaternion.AngleAxis(viewAngle, transform.forward) * transform.up).normalized * viewDist;
-        Vector3 left = (Quaternion.AngleAxis(-viewAngle, transform.forward) * transform.up).normalized * viewDist;
-        RaycastHit2D hitR = Physics2D.Raycast(transform.position, right, distance: viewDist);
-        if (hitR.collider != null)
-        {
-            Debug.DrawRay(transform.position, right.normalized * hitR.distance, Color.yellow);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, right, Color.yellow);
-
-        }
-        RaycastHit2D hitL = Physics2D.Raycast(transform.position, left, distance: viewDist);
-        if (hitL.collider != null)
-        {
-            Debug.DrawRay(transform.position, left.normalized * hitL.distance, Color.yellow);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, left, Color.yellow);
-        }
+        ShowView();
 
 
 
@@ -112,6 +83,46 @@ public class Detection : MonoBehaviour
 
 
     }
+    private void ShowView()
+    {
+        RaycastHit2D hitM = Physics2D.Raycast(transform.position, transform.up, distance: viewDist, layerMask: ~Physics2D.IgnoreRaycastLayer);
+        if (hitM.collider != null)
+        {
+            Debug.DrawRay(transform.position, transform.up.normalized * hitM.distance, Color.yellow);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.up.normalized * viewDist, Color.yellow);
+        }
+        Vector3 right = (Quaternion.AngleAxis(viewAngle, transform.forward) * transform.up).normalized * viewDist;
+        Vector3 left = (Quaternion.AngleAxis(-viewAngle, transform.forward) * transform.up).normalized * viewDist;
+        RaycastHit2D hitR = Physics2D.Raycast(transform.position, right, distance: viewDist, layerMask: ~Physics2D.IgnoreRaycastLayer);
+        if (hitR.collider != null)
+        {
+            Debug.DrawRay(transform.position, right.normalized * hitR.distance, Color.yellow);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, right, Color.yellow);
+
+        }
+        RaycastHit2D hitL = Physics2D.Raycast(transform.position, left, distance: viewDist, layerMask: ~Physics2D.IgnoreRaycastLayer);
+        if (hitL.collider != null)
+        {
+            Debug.DrawRay(transform.position, left.normalized * hitL.distance, Color.yellow);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, left, Color.yellow);
+        }
+    }
+
+    //returns whether or not there is a current enemy
+    public bool IsCurrentEnemy()
+    {
+        return currentEnemy != null;
+    }
+
 
     //checks if a collider can be seen
     public bool CanSee(Collider2D col)
@@ -125,7 +136,7 @@ public class Detection : MonoBehaviour
         //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && toCollider.magnitude <= viewDist && col.gameObject != gameObject)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, toCollider.normalized, toCollider.magnitude, ignoreCharacterMask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, toCollider.normalized, toCollider.magnitude, ignoreCharacterMask + ~Physics2D.IgnoreRaycastLayer);
             if (hit.collider == null)
             {
                 Debug.DrawRay(transform.position, toCollider, Color.green);
@@ -151,7 +162,7 @@ public class Detection : MonoBehaviour
         //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && toCollider.magnitude <= viewDist && e.GetEnemy().gameObject != gameObject)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, toCollider.normalized, toCollider.magnitude, ignoreCharacterMask);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, toCollider.normalized, toCollider.magnitude, ignoreCharacterMask + ~Physics2D.IgnoreRaycastLayer);
             if (hit.collider == null)
             {
                 Debug.DrawRay(transform.position, toCollider, Color.green);
@@ -164,6 +175,8 @@ public class Detection : MonoBehaviour
         }
         return false;
     }
+
+    //sees if the current enemy character can be found to the left or right of this 
 
     //handles what to do when a character is seen
     public void OnSeeCharacter(GameObject character)

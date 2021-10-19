@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 196560341}
   - component: {fileID: 196560340}
   - component: {fileID: 196560339}
+  - component: {fileID: 196560346}
   - component: {fileID: 196560343}
   - component: {fileID: 196560345}
   - component: {fileID: 196560344}
@@ -564,6 +565,25 @@ MonoBehaviour:
   viewDist: 7
   viewAngle: 45
   memoryLength: 3
+--- !u!114 &196560346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196560338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0425fefaf40e54ea296e0b7754259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectScript: {fileID: 196560345}
+  attackScript: {fileID: 0}
+  moveType: 3
+  moveDelay: 2
+  waitTime: 1
+  enemyDir: 1
+  isDead: 0
 --- !u!1 &731492656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1445,7 @@ GameObject:
   - component: {fileID: 1645675437}
   - component: {fileID: 1645675436}
   - component: {fileID: 1645675435}
+  - component: {fileID: 1645675442}
   - component: {fileID: 1645675439}
   - component: {fileID: 1645675441}
   - component: {fileID: 1645675440}
@@ -1593,6 +1614,25 @@ MonoBehaviour:
   viewDist: 7
   viewAngle: 45
   memoryLength: 1.5
+--- !u!114 &1645675442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645675434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0425fefaf40e54ea296e0b7754259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectScript: {fileID: 1645675441}
+  attackScript: {fileID: 0}
+  moveType: 0
+  moveDelay: 1
+  waitTime: 1
+  enemyDir: 0
+  isDead: 0
 --- !u!1 &1719671220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1775,7 @@ GameObject:
   - component: {fileID: 1826203784}
   - component: {fileID: 1826203783}
   - component: {fileID: 1826203782}
+  - component: {fileID: 1826203789}
   - component: {fileID: 1826203786}
   - component: {fileID: 1826203788}
   - component: {fileID: 1826203787}
@@ -1893,6 +1934,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 7173871287599463285, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
   cooldown: 1
+--- !u!114 &1826203789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826203781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0425fefaf40e54ea296e0b7754259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectScript: {fileID: 1826203786}
+  attackScript: {fileID: 0}
+  moveType: 0
+  moveDelay: 1
+  waitTime: 1
+  enemyDir: 2
+  isDead: 0
 --- !u!1 &1924554774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2095,7 @@ GameObject:
   - component: {fileID: 1953818887}
   - component: {fileID: 1953818886}
   - component: {fileID: 1953818885}
+  - component: {fileID: 1953818889}
   - component: {fileID: 1953818884}
   - component: {fileID: 1953818883}
   - component: {fileID: 1953818882}
@@ -2203,6 +2264,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953818889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953818881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0425fefaf40e54ea296e0b7754259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectScript: {fileID: 1953818883}
+  attackScript: {fileID: 0}
+  moveType: 2
+  moveDelay: 0.5
+  waitTime: 1
+  enemyDir: 2
+  isDead: 0
 --- !u!1 &1994451066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2295,7 @@ GameObject:
   - component: {fileID: 1994451069}
   - component: {fileID: 1994451068}
   - component: {fileID: 1994451067}
+  - component: {fileID: 1994451074}
   - component: {fileID: 1994451071}
   - component: {fileID: 1994451073}
   - component: {fileID: 1994451072}
@@ -2383,6 +2464,25 @@ MonoBehaviour:
   viewDist: 9
   viewAngle: 50
   memoryLength: 4
+--- !u!114 &1994451074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994451066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0425fefaf40e54ea296e0b7754259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectScript: {fileID: 1994451073}
+  attackScript: {fileID: 0}
+  moveType: 1
+  moveDelay: 1
+  waitTime: 1
+  enemyDir: 3
+  isDead: 0
 --- !u!1 &2141298043
 GameObject:
   m_ObjectHideFlags: 0

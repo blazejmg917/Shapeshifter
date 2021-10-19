@@ -22,7 +22,7 @@ public class EnemyAttack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void Attack()
     {
         if (target != null)
         {
