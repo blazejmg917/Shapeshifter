@@ -59,7 +59,7 @@ public class projectile : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("collision");
+        //Debug.Log("collision");
         if (collided)
         {
             return;
@@ -77,7 +77,7 @@ public class projectile : MonoBehaviour
 
     private void CharacterCollision(GameObject character)
     {
-        Debug.Log("collision with character");
+        //Debug.Log("collision with character");
         /** change this to deal with enums */
         if(character.tag == playerTag || !(character.GetComponent<CharacterForm>().GetForm() == throwerForm))
         {
@@ -93,7 +93,7 @@ public class projectile : MonoBehaviour
 
     private void ObstacleCollision(GameObject obstacle)
     {
-        Debug.Log("collision with obstacle");
+        //Debug.Log("collision with obstacle");
         collided = true;
         collisionObject = obstacle;
         collisionOffset = obstacle.transform.position - transform.position;

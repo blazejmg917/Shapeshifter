@@ -81,7 +81,7 @@ public class Detection : MonoBehaviour
             return false;
         }
         Vector3 toCollider = col.transform.position - transform.position;
-        float angle = Vector3.Angle(toCollider, transform.forward);
+        float angle = Vector3.Angle(toCollider, transform.up);
         //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && col.gameObject != gameObject)
         {
@@ -107,7 +107,7 @@ public class Detection : MonoBehaviour
             return false;
         }
         Vector3 toCollider = e.GetEnemy().transform.position - transform.position;
-        float angle = Vector3.Angle(toCollider, transform.forward);
+        float angle = Vector3.Angle(toCollider, transform.up);
         //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && e.GetEnemy().gameObject != gameObject)
         {
@@ -147,6 +147,10 @@ public class Detection : MonoBehaviour
             else if (enemy.CorrectForm()) //if they are still in their last seen form, set them active again
             {
                 enemy.SetActiveEnemy(true);
+                if (currentEnemy == null)
+                {
+                    currentEnemy = enemy;
+                }
                 Debug.Log("set enemy active");
                 Report();
             }
@@ -206,7 +210,7 @@ public class Detection : MonoBehaviour
     private void RemoveEnemy( AggroEnemy enemy)
     {
         enemies.Remove(enemy);
-        if (currentEnemy.Equals(enemy))
+        if (currentEnemy != null && currentEnemy.Equals(enemy))
         {
             currentEnemy = null;
         }
@@ -278,6 +282,7 @@ public class Detection : MonoBehaviour
         public void SetActiveEnemy( bool isActive)
         {
             activeEnemy = isActive;
+            
             UpdateLastSeen();
         }
 
