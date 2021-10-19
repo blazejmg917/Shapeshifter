@@ -65,6 +65,10 @@ public class Detection : MonoBehaviour
         {
             OnSeeEnemy(currentEnemy);
         }
+        else
+        {
+            OnNotSeeEnemy();
+        }
 
 
     }
@@ -84,12 +88,12 @@ public class Detection : MonoBehaviour
             RaycastHit hit;
             if (!Physics.Raycast(transform.position, toCollider.normalized, out hit, toCollider.magnitude, ignoreCharacterMask))
             {
-                //Debug.DrawRay(transform.position, toCollider, Color.green);
+                Debug.DrawRay(transform.position, toCollider, Color.green);
                 return true;
             }
             else
             {
-                //Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
+                Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
             }
         }
         return false;
@@ -110,12 +114,12 @@ public class Detection : MonoBehaviour
             RaycastHit hit;
             if (!Physics.Raycast(transform.position, toCollider.normalized, out hit, toCollider.magnitude, ignoreCharacterMask))
             {
-                //Debug.DrawRay(transform.position, toCollider, Color.green);
+                Debug.DrawRay(transform.position, toCollider, Color.green);
                 return true;
             }
             else
             {
-                //Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
+                Debug.DrawRay(transform.position, toCollider.normalized * hit.distance, Color.red);
             }
         }
         return false;
@@ -136,7 +140,7 @@ public class Detection : MonoBehaviour
             {
                 if (!enemy.CorrectForm())
                 {
-                    enemy.SetForm(enemy.GetEnemy().GetComponent<TypeCheckerDetectionTest>().GetForm());
+                    enemy.SetForm(enemy.GetEnemy().GetComponent<CharacterForm>().GetForm());
                 }
                 
             }
@@ -156,7 +160,7 @@ public class Detection : MonoBehaviour
             /** edit this to use enums */
             if (!enemy.CorrectForm())
             {
-                enemy.SetForm(enemy.GetEnemy().GetComponent<TypeCheckerDetectionTest>().GetForm()); // set the enemy's known form to its current form.
+                enemy.SetForm(enemy.GetEnemy().GetComponent<CharacterForm>().GetForm()); // set the enemy's known form to its current form.
                 enemy.SetActiveEnemy(true);
                 Debug.Log("updated enemy form");
                 Report();
@@ -178,11 +182,17 @@ public class Detection : MonoBehaviour
         gameObject.GetComponent<EnemyAttack>().SetTarget(enemy.GetEnemy());
     }
 
+    //handles what to do when there is not an active hostile enemy
+    public virtual void OnNotSeeEnemy()
+    {
+        gameObject.GetComponent<EnemyAttack>().SetTarget(null);
+    }
+
     //adds an enemy to the list of AggroEnemies
     private void AddEnemy(GameObject enemy)
     {
         /** edit this to use enums */
-        AggroEnemy newEnemy = new AggroEnemy(enemy, enemy.GetComponent<TypeCheckerDetectionTest>().GetForm());
+        AggroEnemy newEnemy = new AggroEnemy(enemy, enemy.GetComponent<CharacterForm>().GetForm());
         enemies.Add(newEnemy);
         if (currentEnemy == null)
         {
@@ -223,7 +233,7 @@ public class Detection : MonoBehaviour
         string report = "current enemies: " + enemies.Count + "\n";
         foreach( AggroEnemy e in enemies )
         {
-            report += "enemy - known form: " + e.GetForm() + ", actual form: " + e.GetEnemy().GetComponent<TypeCheckerDetectionTest>().GetForm() + ", active: " + e.IsActiveEnemy() + ", elapsed time: " + e.TimeSinceSeen() + "\n";
+            report += "enemy - known form: " + e.GetForm() + ", actual form: " + e.GetEnemy().GetComponent<CharacterForm>().GetForm() + ", active: " + e.IsActiveEnemy() + ", elapsed time: " + e.TimeSinceSeen() + "\n";
         }
         Debug.Log(report);
     }
@@ -232,11 +242,11 @@ public class Detection : MonoBehaviour
     public class AggroEnemy
     {
         private GameObject enemy;
-        private int form;
+        private Shapeshift.Forms form;
         private bool activeEnemy;
         private float lastSeen;
 
-        public AggroEnemy(GameObject enemy, int form)
+        public AggroEnemy(GameObject enemy, Shapeshift.Forms form)
         {
             this.enemy = enemy;
             this.form = form;
@@ -249,12 +259,12 @@ public class Detection : MonoBehaviour
             return enemy;
         }
 
-        public int GetForm()
+        public Shapeshift.Forms GetForm()
         {
             return form;
         }
 
-        public void SetForm(int form)
+        public void SetForm(Shapeshift.Forms form)
         {
             this.form = form;
             UpdateLastSeen();
@@ -285,7 +295,7 @@ public class Detection : MonoBehaviour
         public bool CorrectForm()
         {
             /** edit this to use enums */
-            if(form == enemy.GetComponent<TypeCheckerDetectionTest>().GetForm()){
+            if(form == enemy.GetComponent<CharacterForm>().GetForm()){
                 return true;
             }
             return false;

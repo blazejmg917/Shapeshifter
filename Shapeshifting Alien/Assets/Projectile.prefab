@@ -139,6 +139,6 @@ MonoBehaviour:
   stickDuration: 0
   damage: 1
   characterLayer: 6
-  obstacleLayer: 0
+  obstacleLayer: 3
   playerTag: Player
   throwerForm: 0
