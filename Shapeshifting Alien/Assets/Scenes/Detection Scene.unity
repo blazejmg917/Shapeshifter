@@ -264,10 +264,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 196560338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265b6558f7b90264fb34d8c192ac188f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3994f17f63d917d44bfda5dbfa6288c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  form: 1
+  form: 2
   enemyForms: 
 --- !u!1 &731492656
 GameObject:
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 963874135}
   - component: {fileID: 963874134}
   - component: {fileID: 963874133}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,13 +459,13 @@ GameObject:
   - component: {fileID: 1126509242}
   - component: {fileID: 1126509241}
   - component: {fileID: 1126509240}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1126509240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -726,10 +726,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1645675434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265b6558f7b90264fb34d8c192ac188f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3994f17f63d917d44bfda5dbfa6288c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  form: 3
+  form: 1
   enemyForms: 
 --- !u!1 &1826203781
 GameObject:
@@ -744,8 +744,8 @@ GameObject:
   - component: {fileID: 1826203783}
   - component: {fileID: 1826203782}
   - component: {fileID: 1826203786}
-  - component: {fileID: 1826203787}
   - component: {fileID: 1826203788}
+  - component: {fileID: 1826203787}
   m_Layer: 6
   m_Name: Dynamic Sprite
   m_TagString: Untagged
@@ -849,7 +849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826203781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -871,7 +871,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   viewDist: 8
-  viewAngle: 45
+  viewAngle: 180
   memoryLength: 5
 --- !u!114 &1826203787
 MonoBehaviour:
@@ -882,11 +882,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1826203781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265b6558f7b90264fb34d8c192ac188f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3994f17f63d917d44bfda5dbfa6288c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   form: 0
-  enemyForms: 0200000003000000
+  enemyForms: 0100000003000000
 --- !u!114 &1826203788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +913,7 @@ GameObject:
   - component: {fileID: 1994451069}
   - component: {fileID: 1994451068}
   - component: {fileID: 1994451067}
+  - component: {fileID: 1994451071}
   m_Layer: 6
   m_Name: Static Sprite (2)
   m_TagString: Untagged
@@ -1032,3 +1033,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1994451071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994451066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3994f17f63d917d44bfda5dbfa6288c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  form: 0
+  enemyForms: 
