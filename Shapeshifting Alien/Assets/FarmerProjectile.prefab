@@ -53,19 +53,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463281, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: m_Color.b
-      value: 0.19215685
+      value: 0.18823531
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463281, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: m_Color.g
-      value: 0.94509804
+      value: 0.9333334
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463281, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: m_Color.r
-      value: 0.22216092
+      value: 0.20000002
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463284, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: speed
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463284, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: throwerForm
