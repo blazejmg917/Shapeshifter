@@ -578,11 +578,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectScript: {fileID: 196560345}
-  attackScript: {fileID: 0}
+  attackScript: {fileID: 196560344}
   moveType: 3
   moveDelay: 2
   waitTime: 1
-  enemyDir: 1
+  enemyStartDir: 2
   isDead: 0
 --- !u!1 &731492656
 GameObject:
@@ -1295,7 +1295,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33044079133ee145b034b233955a473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlienCode: 49
+  MinerCode: 50
+  FarmerCode: 51
+  OutlawCode: 52
+  LawmanCode: 53
+  NextCode: 101
+  PrevCode: 113
   currentForm: 0
+  transformDelay: 0.1
   animator: {fileID: 1566991807}
 --- !u!114 &1566991804
 MonoBehaviour:
@@ -1627,11 +1635,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectScript: {fileID: 1645675441}
-  attackScript: {fileID: 0}
+  attackScript: {fileID: 1645675440}
   moveType: 0
   moveDelay: 1
   waitTime: 1
-  enemyDir: 0
+  enemyStartDir: 2
   isDead: 0
 --- !u!1 &1719671220
 GameObject:
@@ -1951,7 +1959,7 @@ MonoBehaviour:
   moveType: 0
   moveDelay: 1
   waitTime: 1
-  enemyDir: 2
+  enemyStartDir: 2
   isDead: 0
 --- !u!1 &1924554774
 GameObject:
@@ -2277,11 +2285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectScript: {fileID: 1953818883}
-  attackScript: {fileID: 0}
+  attackScript: {fileID: 1953818882}
   moveType: 2
   moveDelay: 0.5
   waitTime: 1
-  enemyDir: 2
+  enemyStartDir: 2
   isDead: 0
 --- !u!1 &1994451066
 GameObject:
@@ -2477,11 +2485,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectScript: {fileID: 1994451073}
-  attackScript: {fileID: 0}
+  attackScript: {fileID: 1994451072}
   moveType: 1
   moveDelay: 1
   waitTime: 1
-  enemyDir: 3
+  enemyStartDir: 2
   isDead: 0
 --- !u!1 &2141298043
 GameObject:
