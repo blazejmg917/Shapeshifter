@@ -42,10 +42,10 @@ public class Shapeshift : MonoBehaviour
     void Start()
     {
         formDict.Add(Forms.Alien, true);
-        formDict.Add(Forms.Miner, true);
-        formDict.Add(Forms.Farmer, true);
-        formDict.Add(Forms.Outlaw, true);
-        formDict.Add(Forms.Lawman, true);
+        formDict.Add(Forms.Miner, false);
+        formDict.Add(Forms.Farmer, false);
+        formDict.Add(Forms.Outlaw, false);
+        formDict.Add(Forms.Lawman, false);
     }
 
     [Tooltip("Sets form type parameter in animation controller")]
@@ -61,7 +61,7 @@ public class Shapeshift : MonoBehaviour
                 //transform into the queud form, remove queued forms and set up the animator for the new form
                 currentForm = (Forms)queuedForm;
                 queuedForm = -1;
-                Debug.Log("turned into " + queuedForm);
+                //Debug.Log("turned into " + queuedForm);
                 animator.SetInteger("FormType", (int)currentForm);
             }
             //if you get a keycode that corresponds to a form, try to transform into that form
@@ -118,7 +118,7 @@ public class Shapeshift : MonoBehaviour
     public bool PrevForm()
     {
         Forms current = currentForm;
-        Debug.Log("form: " + current + " " + currentForm);
+        //Debug.Log("form: " + current + " " + currentForm);
         do
         {
 
@@ -141,7 +141,7 @@ public class Shapeshift : MonoBehaviour
     //used to switch forms
     public bool SwitchForm(Forms form)
     {
-        Debug.Log("trying to switch to " + form);
+        //Debug.Log("trying to switch to " + form);
         //if you are in the form you are trying to transform into, you can't transform
         if(form == currentForm)
         {
@@ -153,7 +153,7 @@ public class Shapeshift : MonoBehaviour
             //set your current form to alien
             currentForm = Forms.Alien;
             //queue your goal for transformation and set up the timer for the transformation delay
-                Debug.Log(form + " logged");
+                //Debug.Log(form + " logged");
                 queuedForm = (int)form;
                 transformTimer = transformDelay;
 
