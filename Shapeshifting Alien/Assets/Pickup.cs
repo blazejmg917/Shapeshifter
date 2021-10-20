@@ -10,8 +10,8 @@ public class Pickup : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            if (!col.gameObject.GetComponent<TaskHandler>().TaskCompleted(gameObject){
-                col.gameObject.GetComponent<TaskHandler>().CompleteTask(gameObject);
+            if (!col.gameObject.GetComponent<Taskhandler>().TaskCompleted(gameObject)){
+                col.gameObject.GetComponent<Taskhandler>().CompleteTask(gameObject);
                 Destroy(gameObject);
             }
         }

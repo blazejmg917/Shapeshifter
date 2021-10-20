@@ -23,6 +23,6 @@ public class Taskhandler : MonoBehaviour
 
     public int NumTasks()
     {
-        return completedTasks.Count();
+        return completedTasks.Count;
     }
 }
