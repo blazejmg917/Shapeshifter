@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public enum Direction { Down, Up, Left, Right };
+
+    public Direction direction = Direction.Down;
+
     //Movement speed
     public float moveSpeed = 5f;
 
@@ -16,36 +20,36 @@ public class PlayerMovement : MonoBehaviour
     //Movement vector
     Vector2 movement;
 
-    //Determines if the player is facing right
-    bool flipped = false;
-
     private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //Flip player when facing right
-        if (movement.x < 0 && flipped)
-            FlipScaleX();
-        else if (movement.x > 0 && !flipped)
-            FlipScaleX();
+        if (movement.x != 0)
+            movement.y = 0;
+        else if (movement.y != 0)
+            movement.x = 0;
+        else
+            movement = Vector2.zero;
+
+        if (movement.x == 0 && movement.y == -1)
+            direction = Direction.Down;
+        else if (movement.x == 0 && movement.y == 1)
+            direction = Direction.Up;
+        else if (movement.x == -1 && movement.y == 0)
+            direction = Direction.Left;
+        else if (movement.x == 1 && movement.y == 0)
+            direction = Direction.Right;
 
         //Set appropriate parameters
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Direction", (float)direction);
     }
 
     private void FixedUpdate()
     {
         body.MovePosition(body.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
-
-    private void FlipScaleX()
-    {
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-        flipped = !flipped;
     }
 }
