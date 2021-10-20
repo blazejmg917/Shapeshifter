@@ -35,6 +35,8 @@ public class EnemyController : MonoBehaviour
     [Tooltip("whether the enemy is dead or not")]
     public bool isDead = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -192,6 +194,6 @@ public class EnemyController : MonoBehaviour
             Debug.LogWarning("tried to rotate to direction out of bounds");
         }
         enemyDir = (Directions)newDir;
-        transform.rotation = Quaternion.Euler(EnemyController.GetDirVector(enemyDir));
+        animator.SetFloat("Direction", (float)enemyDir);
     }
 }
