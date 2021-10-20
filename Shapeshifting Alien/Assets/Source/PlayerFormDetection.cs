@@ -21,7 +21,7 @@ public class PlayerFormDetection : MonoBehaviour
         
         List<Shapeshift.Forms> formsFound = new List<Shapeshift.Forms>();
         Collider2D[] objects = Physics2D.OverlapCircleAll(point: transform.position, radius: viewDist, layerMask: characterMask);
-        Debug.Log("number of characters: " + objects.Length);
+        //Debug.Log("number of characters: " + objects.Length);
         foreach(Collider2D col in objects)
         {
             CharacterForm formScript = col.gameObject.GetComponent<CharacterForm>();

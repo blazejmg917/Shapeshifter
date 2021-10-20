@@ -86,6 +86,7 @@ public class projectile : MonoBehaviour
             collisionOffset = character.transform.position - transform.position;
             if(character.GetComponent<Health>() != null)
             {
+                Debug.Log("damage");
                 character.GetComponent<Health>().DealDamage(damage);
             }
         }
