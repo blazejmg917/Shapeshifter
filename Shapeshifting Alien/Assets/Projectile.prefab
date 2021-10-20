@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7173871287599463286}
   - component: {fileID: 7173871287599463287}
   - component: {fileID: 7173871287599463284}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,6 +139,6 @@ MonoBehaviour:
   stickDuration: 0
   damage: 1
   characterLayer: 6
-  obstacleLayer: 0
+  obstacleLayer: 3
   playerTag: Player
   throwerForm: 0
