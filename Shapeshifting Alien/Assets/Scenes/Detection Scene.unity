@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &5296833 stripped
 --- !u!1 &22034617
 GameObject:
@@ -271,6 +272,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5296833}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6a1c3d84499b16741accaab966d4114a, type: 2}
   m_CullingMode: 0
@@ -4100,6 +4102,11 @@ PrefabInstance:
     - target: {fileID: 8383079415408513275, guid: c03aa5f918bc04b40989de90a5aa155c, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383079415408513275, guid: c03aa5f918bc04b40989de90a5aa155c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+>>>>>>> c8d5c3c578d0ef4fcde9ae3a2d86e41ae8320c14
       objectReference: {fileID: 0}
     - target: {fileID: 8383079415408513277, guid: c03aa5f918bc04b40989de90a5aa155c, type: 3}
       propertyPath: m_Name
