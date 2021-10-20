@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shapeshift : MonoBehaviour
-{ 
+{
 
     //The different forms that the player can shapeshift into
     public enum Forms { Alien, Miner, Farmer, Outlaw, Lawman };
@@ -33,11 +33,16 @@ public class Shapeshift : MonoBehaviour
     //the current queued form to change into. -1 if no form
     private float queuedForm = -1f;
     //count of all forms
-    private int formCount = 5;
+    public int formCount = 5;
+    //count of currently accessible forms
+    public int currentFormCount = 1;
+    [Header("General settings")]
+    [Tooltip("The player's detection script for finding new forms")]
+    public PlayerFormDetection detectScript;
 
     //A dictionary of all forms and their availability
     public Dictionary<Forms, bool> formDict = new Dictionary<Forms, bool>();
-    
+
     //set up dictionary of forms
     void Start()
     {
@@ -46,17 +51,25 @@ public class Shapeshift : MonoBehaviour
         formDict.Add(Forms.Farmer, false);
         formDict.Add(Forms.Outlaw, false);
         formDict.Add(Forms.Lawman, false);
+        if(detectScript == null)
+        {
+            detectScript = gameObject.GetComponent<PlayerFormDetection>();
+        }
     }
 
     [Tooltip("Sets form type parameter in animation controller")]
     public Animator animator;
     void FixedUpdate()
     {
+        if (currentFormCount < formCount)
+        {
+            FindForms();
+        }
         //if a transformation isn't currently happening
         if (transformTimer <= 0)
         {
             //if there is a queued form
-            if(queuedForm >= 0)
+            if (queuedForm >= 0)
             {
                 //transform into the queud form, remove queued forms and set up the animator for the new form
                 currentForm = (Forms)queuedForm;
@@ -86,7 +99,7 @@ public class Shapeshift : MonoBehaviour
             transformTimer -= Time.fixedDeltaTime;
         }
 
-        
+
     }
 
     //returns the current form
@@ -143,7 +156,7 @@ public class Shapeshift : MonoBehaviour
     {
         //Debug.Log("trying to switch to " + form);
         //if you are in the form you are trying to transform into, you can't transform
-        if(form == currentForm)
+        if (form == currentForm)
         {
             return false;
         }
@@ -153,12 +166,12 @@ public class Shapeshift : MonoBehaviour
             //set your current form to alien
             currentForm = Forms.Alien;
             //queue your goal for transformation and set up the timer for the transformation delay
-                //Debug.Log(form + " logged");
-                queuedForm = (int)form;
-                transformTimer = transformDelay;
+            //Debug.Log(form + " logged");
+            queuedForm = (int)form;
+            transformTimer = transformDelay;
 
-                    
-             
+
+
         }
         //else if the form is unavailable, you can't transform
         else
@@ -168,6 +181,20 @@ public class Shapeshift : MonoBehaviour
         //set the animator to use the current form
         animator.SetInteger("FormType", (int)currentForm);
         return true;
+    }
+
+    //attempt to find new forms to unlock
+    public void FindForms()
+    {
+        //Debug.Log("looking for forms");
+        List<Forms> newForms = detectScript.SearchForForms(formDict);
+        if(newForms.Count > 0)
+        {
+            foreach(Forms newForm in newForms)
+            {
+                UnlockForm(newForm);
+            }
+        }
     }
 
     //used to unlock a new form to transform into
