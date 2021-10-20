@@ -195,5 +195,6 @@ public class EnemyController : MonoBehaviour
         }
         enemyDir = (Directions)newDir;
         animator.SetFloat("Direction", (float)enemyDir);
+        transform.rotation = Quaternion.Euler(EnemyController.GetDirVector(enemyDir));
     }
 }
