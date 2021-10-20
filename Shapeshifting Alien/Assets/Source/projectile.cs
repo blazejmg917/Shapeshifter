@@ -13,7 +13,7 @@ public class projectile : MonoBehaviour
     public float stickDuration = 0;
     [Header("Collision settings")]
     [Tooltip("how much damage the projectile will do when colliding with a character")]
-    public float damage = 1;
+    public int damage = 1;
     [Tooltip("the character layer, used to determine what this object can damage")]
     public int characterLayer;
     [Tooltip("the obstacle layer, used to determine what this object can collide with")]
@@ -84,10 +84,10 @@ public class projectile : MonoBehaviour
             collided = true;
             collisionObject = character;
             collisionOffset = character.transform.position - transform.position;
-            //if(character.GetComponent<Health>() != null)
-            //{
-            //    character.GetComponent<Health>().DealDamage(damage);
-            //}
+            if(character.GetComponent<Health>() != null)
+            {
+                character.GetComponent<Health>().DealDamage(damage);
+            }
         }
     }
 

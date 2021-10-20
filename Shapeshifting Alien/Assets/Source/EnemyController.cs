@@ -35,6 +35,8 @@ public class EnemyController : MonoBehaviour
     [Tooltip("whether the enemy is dead or not")]
     public bool isDead = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -172,15 +174,15 @@ public class EnemyController : MonoBehaviour
         {
             rotate = -1;
         }
-        Debug.Log("dir before addition: " + (int)enemyDir);
+        //Debug.Log("dir before addition: " + (int)enemyDir);
         int newDir = (int)enemyDir + rotate;
-        Debug.Log("dir before mod: " + newDir);
+        //Debug.Log("dir before mod: " + newDir);
         if(newDir < 0)
         {
             newDir = 3;
         }
         newDir %= 4;
-        Debug.Log("dir after mod: " + newDir);
+        //Debug.Log("dir after mod: " + newDir);
         SetRotation(newDir);
         
     }
@@ -192,6 +194,6 @@ public class EnemyController : MonoBehaviour
             Debug.LogWarning("tried to rotate to direction out of bounds");
         }
         enemyDir = (Directions)newDir;
-        transform.rotation = Quaternion.Euler(EnemyController.GetDirVector(enemyDir));
+        animator.SetFloat("Direction", (float)enemyDir);
     }
 }
