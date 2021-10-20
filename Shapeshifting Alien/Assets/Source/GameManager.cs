@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,14 @@ public class GameManager : MonoBehaviour
     public Canvas pauseButtonCanvas;
     [Tooltip("the Pause Screen Canvas")]
     public Canvas pausedCanvas;
+    [Tooltip("the Game Over Canvas")]
+    public Canvas gameOverCanvas;
+    [Tooltip("the Game Over text box")]
+    public Text gameOverMessage;
+    [Tooltip("the message to display when you win")]
+    public string winMessage = "You Win!";
+    [Tooltip("the message to display when you lose")]
+    public string loseMessage = "Game Over";
 
 
     //instance of the GameManager to return
@@ -57,6 +66,8 @@ public class GameManager : MonoBehaviour
         SetupSceneForSpawn();
         pauseButtonCanvas.gameObject.SetActive(true);
         pausedCanvas.gameObject.SetActive(false);
+        gameOverCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     //setup the scene for the player to spawn
@@ -87,7 +98,18 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(bool win)
     {
-
+        Time.timeScale = 0;
+        gameOverCanvas.gameObject.SetActive(true);
+        pauseButtonCanvas.gameObject.SetActive(false);
+        pausedCanvas.gameObject.SetActive(false);
+        if (win)
+        {
+            gameOverMessage.text = winMessage;
+        }
+        else
+        {
+            gameOverMessage.text = loseMessage;
+        }
     }
 
     //used to exit to the main menu
