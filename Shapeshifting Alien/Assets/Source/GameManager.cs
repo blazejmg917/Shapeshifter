@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Vector3 spawnPos;
     [Tooltip("whether the game is paused or not")]
     public static bool isPaused;
+    [Header("Scene Names")]
+    [Tooltip("The name of the main menu scene")]
+    public string mainMenuScene = "MainMenu";
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +57,7 @@ public class GameManager : MonoBehaviour
     //used to exit to the main menu
     public void QuitToMenu()
     {
-
+        SceneManager.LoadScene(mainMenuScene);
     }
 
     //used to fully exit the game
