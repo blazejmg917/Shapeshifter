@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [Tooltip("the max health of this character")]
     public int maxHealth = 5;
     //this creature's current health
-    private int currentHealth;
+    public int currentHealth;
     [Tooltip("how long this character is invincible for after being hit")]
     public float invincibleTime=.5f;
     //timer for keeping track of invincibility
@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
 
     public void DealDamage(int damage)
     {
+        Debug.Log(invincibleTimer);
         if(invincibleTimer <= 0)
         {
             currentHealth -= damage;
@@ -45,7 +46,8 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        GameManager.GameOver(false);
+        Debug.Log("player died");
+        GameManager.Instance().GameOver(false);
     }
 
     public void Reset()
