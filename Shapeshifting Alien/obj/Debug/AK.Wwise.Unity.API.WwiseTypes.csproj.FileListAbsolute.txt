@@ -1,0 +1,2 @@
+/Users/aaronfyler/Documents/VGDC GameJam 2021/Shapeshifter/Shapeshifting Alien/obj/Debug/AK.Wwise.Unity.API.WwiseTypes.csproj.AssemblyReference.cache
+/Users/aaronfyler/Documents/VGDC GameJam 2021/Shapeshifter/Shapeshifting Alien/obj/Debug/AK.Wwise.Unity.API.WwiseTypes.csproj.CoreCompileInputs.cache
