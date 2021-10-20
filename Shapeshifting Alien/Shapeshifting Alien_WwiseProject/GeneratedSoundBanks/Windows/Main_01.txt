@@ -1,7 +1,11 @@
 Event	ID	Name			Wwise Object Path	Notes
-	468925930	Desert_BG_01			\Default Work Unit\Desert_BG_01	
 	554650843	Spaceship			\Default Work Unit\Spaceship	
+	626954121	Menu_Close			\Default Work Unit\Menu_Close	
+	881806316	FST			\Default Work Unit\FST	
+	1000251281	Music_Town			\Default Work Unit\Music_Town	
+	1287511387	Menu_Open			\Default Work Unit\Menu_Open	
 	1850388778	Desert			\Default Work Unit\Desert	
+	1969697111	Death_Sting			\Default Work Unit\Death_Sting	
 	2236058871	On_Start			\Default Work Unit\On_Start	
 	3033951223	Music_Spaceship_01			\Default Work Unit\Music_Spaceship_01	
 	3175006835	Spaceship_BG_01			\Default Work Unit\Spaceship_BG_01	
@@ -19,16 +23,26 @@ State	ID	Name	State Group			Notes
 
 Custom State	ID	Name	State Group	Owner		Notes
 	271959507	SpaceShip	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST		
+	294496023	SpaceShip	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Music_Town		
 	356287144	WildCountry	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene		
 	358974977	Town	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene		
 	430140188	Town	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST		
+	629430486	Nowhere	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Music_Town		
+	755878022	WildCountry	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Music_Town		
 	799652391	Nowhere	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST		
 	908355086	Nowhere	MusicState_01	\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene		
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	105620763	InteractionOpen	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Interact Sound_0CF75FD5.wem		\Actor-Mixer Hierarchy\Default Work Unit\InteractionOpen		145656
+	354255898	FST_02	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\FST2_B2D95442.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FST\FST_02		28576
+	452919440	FST_01	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\FST2_CE81A962.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FST\FST_01		31136
+	503354697	Narrow TimbreTown	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Narrow TimbreTown_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_Town\Authentic StringsTown\Narrow TimbreTown		5644976
 	527206869	Explore ST	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Explore ST_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Desert\Explore ST\Explore ST		13322516
-	547689286	Wind_Base	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Wind_Base_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Wind_Base		4484908
 	612476385	Spaceship_W_solo	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Spaceship_W_solo_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene\Spaceship_W_solo\Spaceship_W_solo		9273536
+	694037572	Interaction_Close	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\click_86D6B478.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction_Close		50756
 	705485986	Spaceship synth 	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Spaceship synth _D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene\Spaceship synth\Spaceship synth 		9708908
+	796787227	FST_03	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\FST2_C7E7D0D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\FST\FST_03		26012
 	891174479	Spaceship Bells	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Spaceship Bells_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Spaceship_Scene\Spaceship Bells\Spaceship Bells		7836356
+	1008513627	Authentic StringsTown	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Authentic StringsTown_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Music_Town\Authentic StringsTown\Authentic StringsTown		2822576
+	1065826581	Inst 17Death_Stinger	Y:\Documents\VGDC GameJam 2021\Shapeshifter\Shapeshifting Alien\Shapeshifting Alien_WwiseProject\.cache\Windows\SFX\Inst 17Death_Stinger_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Inst 17Death_Stinger		3880944
 

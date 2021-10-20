@@ -13,10 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID DEATH_STING = 1969697111U;
         static const AkUniqueID DESERT = 1850388778U;
-        static const AkUniqueID DESERT_BG_01 = 468925930U;
         static const AkUniqueID DESERT_MUSIC = 3649627898U;
+        static const AkUniqueID FST = 881806316U;
+        static const AkUniqueID MENU_CLOSE = 626954121U;
+        static const AkUniqueID MENU_OPEN = 1287511387U;
         static const AkUniqueID MUSIC_SPACESHIP_01 = 3033951223U;
+        static const AkUniqueID MUSIC_TOWN = 1000251281U;
         static const AkUniqueID ON_START = 2236058871U;
         static const AkUniqueID SPACESHIP = 554650843U;
         static const AkUniqueID SPACESHIP_BG_01 = 3175006835U;

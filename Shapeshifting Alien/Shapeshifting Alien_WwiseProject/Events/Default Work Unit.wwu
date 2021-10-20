@@ -5,17 +5,6 @@
 			<ChildrenList>
 				<Event Name="Disguise_Switch" ID="{FA858DE4-2F75-4A96-855A-D8824562E4CA}"/>
 				<Event Name="Town_BG_01" ID="{5BCB3D10-0A6A-441C-9DBC-F474D363AB22}"/>
-				<Event Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}">
-					<ChildrenList>
-						<Action Name="" ID="{06A3EEC0-4964-46B3-A4D7-8960C2889028}" ShortID="1026571938">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Wind_Base" ID="{5789FEA4-FC33-4596-8C07-216E16A49BE3}" WorkUnitID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Spaceship_BG_01" ID="{00222A5F-D7FB-4E4E-8DD4-93E0FC498DDD}"/>
 				<Event Name="Music_Spaceship_01" ID="{0290CA14-2950-40D5-A032-86EA4AC12A7E}">
 					<ChildrenList>
@@ -64,16 +53,6 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{F3B6F4BD-A355-4FC7-9A96-F44D27ABE822}" ShortID="220123562">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="41"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Desert_Music" ID="{1CD3C94F-2B32-4B9A-AB93-1BF0CA556B4A}">
@@ -116,6 +95,61 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Nowhere" ID="{8C0B51A6-174B-4725-A1F8-E3E52296BC2A}" WorkUnitID="{224412E3-E277-4D05-89AA-407312D4FE87}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Music_Town" ID="{21E4B406-4D63-4365-9A53-9B684218795F}">
+					<ChildrenList>
+						<Action Name="" ID="{C42AB894-950C-4683-BD88-4A97131CE1D2}" ShortID="1014784011">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Town" ID="{066C050C-256B-4B46-B98D-25EDC180C8AA}" WorkUnitID="{0DF01598-4185-4D2B-BD59-DE67D0816FF6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="FST" ID="{FB244180-4A2E-4397-AA32-332B42764D37}">
+					<ChildrenList>
+						<Action Name="" ID="{14A929F4-2939-4423-8723-ABB5FB1F4F3F}" ShortID="250587668">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="FST" ID="{60CBC3DF-3FB5-4C71-9B78-EA0622F58BBA}" WorkUnitID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Open" ID="{28C2E48D-D2C2-4931-BDAB-F99B6592EF58}">
+					<ChildrenList>
+						<Action Name="" ID="{0C3AAD45-9753-4ABE-82CB-5F09447CFD25}" ShortID="713850555">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="InteractionOpen" ID="{DDB4EC7B-7CDC-4DC0-98BF-D5F44F506F03}" WorkUnitID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Close" ID="{7B3222AA-8C51-4D8B-978E-4A3459D04888}">
+					<ChildrenList>
+						<Action Name="" ID="{68A6FEDB-A0DC-489D-8E94-F7790D87AFF0}" ShortID="133142471">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Interaction_Close" ID="{7EA91456-38AE-4100-94F5-63511130426F}" WorkUnitID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Death_Sting" ID="{562E457A-6C02-4262-AD72-618FE737AD71}">
+					<ChildrenList>
+						<Action Name="" ID="{A6BFBE1A-FC10-407C-BA94-C54EC2EC218A}" ShortID="560990652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Inst 17Death_Stinger" ID="{FDDD25E7-709C-43E3-BE1E-829861D87B0C}" WorkUnitID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

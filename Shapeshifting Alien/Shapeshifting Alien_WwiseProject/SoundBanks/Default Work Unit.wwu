@@ -7,10 +7,14 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Music_Spaceship_01" ID="{0290CA14-2950-40D5-A032-86EA4AC12A7E}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Desert" ID="{9833F631-7A20-422C-9129-B4ED274C5FB9}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Death_Sting" ID="{562E457A-6C02-4262-AD72-618FE737AD71}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music_Town" ID="{21E4B406-4D63-4365-9A53-9B684218795F}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Spaceship" ID="{1877F416-35B6-4369-8E0E-A4ED8D94028E}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="FST" ID="{FB244180-4A2E-4397-AA32-332B42764D37}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="On_Start" ID="{71B068CD-EB9D-4490-B6DA-E9267BDB27BE}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Desert_BG_01" ID="{59800A71-65CC-4835-A5BB-1958B50F8BAE}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu_Open" ID="{28C2E48D-D2C2-4931-BDAB-F99B6592EF58}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Desert_Music" ID="{1CD3C94F-2B32-4B9A-AB93-1BF0CA556B4A}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Menu_Close" ID="{7B3222AA-8C51-4D8B-978E-4A3459D04888}" WorkUnitID="{9F1AA5A5-D264-4729-95CA-C53B2B983439}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

@@ -706,6 +706,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857605417}
   m_CullTransparentMesh: 1
+--- !u!1 &912462418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912462420}
+  - component: {fileID: 912462419}
+  m_Layer: 0
+  m_Name: Menu_Close
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &912462419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912462418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2cba04beded4c1da90786340f2ab1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Post: {fileID: 0}
+  MenuClose:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 241f0f12900214aecbf31e5457176dfc, type: 2}
+--- !u!4 &912462420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912462418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2784073, y: -0.6136892, z: -947.48193}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123447036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1638,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 912462419}
+        m_TargetAssemblyTypeName: Menu_Close, Assembly-CSharp
+        m_MethodName: Menuclose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1967819992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,6 +1922,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sherrif4
       objectReference: {fileID: 0}
+    - target: {fileID: 9091758058434697213, guid: 4f50e3009d8bd4896b2d8b397ddb7391, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f50e3009d8bd4896b2d8b397ddb7391, type: 3}
 --- !u!1001 &2328955554789655431
@@ -1871,6 +1935,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7395215512372101690, guid: f9e712d1ce2da4a4e9e3f50aa496ab10, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     - target: {fileID: 7395215512372101691, guid: f9e712d1ce2da4a4e9e3f50aa496ab10, type: 3}
       propertyPath: m_Name
       value: Sherrif3
@@ -1932,6 +2000,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farmer2
       objectReference: {fileID: 0}
+    - target: {fileID: 5112440925578004777, guid: e39c77b613b8646f992b2f163344c3fb, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     - target: {fileID: 5112440925578004781, guid: e39c77b613b8646f992b2f163344c3fb, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -2033,6 +2105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sherrif2
       objectReference: {fileID: 0}
+    - target: {fileID: 2365016390059196313, guid: 8aeabb15f1db54c34adda5a8f026a8ff, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeabb15f1db54c34adda5a8f026a8ff, type: 3}
 --- !u!1001 &8069479227256868249
@@ -2086,6 +2162,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8069479227379011028, guid: 01f60b377099b442c9e3795f6163825e, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     - target: {fileID: 8069479227379011029, guid: 01f60b377099b442c9e3795f6163825e, type: 3}
       propertyPath: m_Name
       value: Farmer3
@@ -2143,6 +2223,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8311889155828543956, guid: 64a4db3a95a274cd98a4b55b85efb4d7, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     - target: {fileID: 8311889155828543957, guid: 64a4db3a95a274cd98a4b55b85efb4d7, type: 3}
       propertyPath: m_Name
       value: Farmer4
@@ -2200,6 +2284,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8420067814954872944, guid: 42dc8100c67914952a27de18c450fc4d, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     - target: {fileID: 8420067814954872951, guid: 42dc8100c67914952a27de18c450fc4d, type: 3}
       propertyPath: m_Name
       value: Farmer1
@@ -2257,6 +2345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 832370772077782460, guid: b36fed479f8a04fe18c6fcffbc23b779, type: 3}
+      propertyPath: Menu_Open.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
     - target: {fileID: 832370772077782461, guid: b36fed479f8a04fe18c6fcffbc23b779, type: 3}
       propertyPath: m_Name
       value: Sherrif1

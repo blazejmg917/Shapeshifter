@@ -141,4 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19395b6a424314306bbe38971326795b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Menu_Open:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 63e2b063f9be6448db36c0c11b5edbd5, type: 2}
   Trigger: {fileID: 7395215512372101693}

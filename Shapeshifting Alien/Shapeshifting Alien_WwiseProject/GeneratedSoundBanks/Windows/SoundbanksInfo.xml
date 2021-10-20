@@ -16,30 +16,61 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3534669624" Language="SFX" Hash="1528868341">
+		<SoundBank Id="3534669624" Language="SFX" Hash="860657273">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main_01</ObjectPath>
 			<ShortName>Main_01</ShortName>
 			<Path>Main_01.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1850388778" Name="Desert" ObjectPath="\Events\Default Work Unit\Desert" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
-					<ActionPostEvent>
-						<ActionPostEventEntry Id="468925930" Name="Desert_BG_01" ObjectPath="\Events\Default Work Unit\Desert_BG_01"/>
-						<ActionPostEventEntry Id="3649627898" Name="Desert_Music" ObjectPath="\Events\Default Work Unit\Desert_Music"/>
-					</ActionPostEvent>
-				</Event>
-				<Event Id="468925930" Name="Desert_BG_01" ObjectPath="\Events\Default Work Unit\Desert_BG_01" DurationType="OneShot" DurationMin="23.358562" DurationMax="23.358562">
+				<Event Id="1969697111" Name="Death_Sting" ObjectPath="\Events\Default Work Unit\Death_Sting" DurationType="OneShot" DurationMin="22.000000" DurationMax="22.000000">
 					<IncludedMemoryFiles>
-						<File Id="547689286" Language="SFX">
-							<ShortName>Wind_Base.wav</ShortName>
-							<Path>SFX/Wind_Base_10C4C929.wem</Path>
+						<File Id="1065826581" Language="SFX">
+							<ShortName>Inst 17Death_Stinger.wav</ShortName>
+							<Path>SFX/Inst 17Death_Stinger_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1850388778" Name="Desert" ObjectPath="\Events\Default Work Unit\Desert" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="3649627898" Name="Desert_Music" ObjectPath="\Events\Default Work Unit\Desert_Music"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="3649627898" Name="Desert_Music" ObjectPath="\Events\Default Work Unit\Desert_Music" DurationType="OneShot" DurationMin="977.962585" DurationMax="977.962585">
 					<IncludedMemoryFiles>
 						<File Id="527206869" Language="SFX">
 							<ShortName>Explore ST.wav</ShortName>
 							<Path>SFX/Explore ST_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="881806316" Name="FST" ObjectPath="\Events\Default Work Unit\FST" MaxAttenuation="160.000000" DurationType="OneShot" DurationMin="0.147098" DurationMax="0.176147">
+					<IncludedMemoryFiles>
+						<File Id="354255898" Language="SFX">
+							<ShortName>FST2.wav</ShortName>
+							<Path>SFX/FST2_B2D95442.wem</Path>
+						</File>
+						<File Id="452919440" Language="SFX">
+							<ShortName>FST2.wav</ShortName>
+							<Path>SFX/FST2_CE81A962.wem</Path>
+						</File>
+						<File Id="796787227" Language="SFX">
+							<ShortName>FST2.wav</ShortName>
+							<Path>SFX/FST2_C7E7D0D8.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="626954121" Name="Menu_Close" ObjectPath="\Events\Default Work Unit\Menu_Close" DurationType="OneShot" DurationMin="0.287373" DurationMax="0.287373">
+					<IncludedMemoryFiles>
+						<File Id="694037572" Language="SFX">
+							<ShortName>click.wav</ShortName>
+							<Path>SFX/click_86D6B478.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1287511387" Name="Menu_Open" ObjectPath="\Events\Default Work Unit\Menu_Open" DurationType="OneShot" DurationMin="0.824891" DurationMax="0.824891">
+					<IncludedMemoryFiles>
+						<File Id="105620763" Language="SFX">
+							<ShortName>Interact Sound.wav</ShortName>
+							<Path>SFX/Interact Sound_0CF75FD5.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -56,6 +87,18 @@
 						<File Id="891174479" Language="SFX">
 							<ShortName>Spaceship Bells.wav</ShortName>
 							<Path>SFX/Spaceship Bells_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1000251281" Name="Music_Town" ObjectPath="\Events\Default Work Unit\Music_Town" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<IncludedMemoryFiles>
+						<File Id="503354697" Language="SFX">
+							<ShortName>Narrow TimbreTown.wav</ShortName>
+							<Path>SFX/Narrow TimbreTown_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1008513627" Language="SFX">
+							<ShortName>Authentic StringsTown.wav</ShortName>
+							<Path>SFX/Authentic StringsTown_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

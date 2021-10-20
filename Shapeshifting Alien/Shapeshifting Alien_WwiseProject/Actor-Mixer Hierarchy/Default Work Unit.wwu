@@ -4,6 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{998D9F32-AEBF-4C3F-A6F4-C24499734A76}" PersistMode="Standalone">
 			<ChildrenList>
 				<Sound Name="Wind_Base" ID="{5789FEA4-FC33-4596-8C07-216E16A49BE3}" ShortID="472818420">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
@@ -51,6 +54,294 @@
 						<ActiveSource Name="Wind_Base" ID="{4B992D33-0094-44BA-809D-86FCC5F024D1}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="InteractionOpen" ID="{DDB4EC7B-7CDC-4DC0-98BF-D5F44F506F03}" ShortID="16206808">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Interact Sound" ID="{FCCF558F-D373-4356-AC3B-02F40B998FCF}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.824891461649784"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Interact Sound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="105620763"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Interact Sound" ID="{FCCF558F-D373-4356-AC3B-02F40B998FCF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Interaction_Close" ID="{7EA91456-38AE-4100-94F5-63511130426F}" ShortID="224185077">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="click" ID="{B3964AEC-FF09-4751-A7AE-33E2F10B079A}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.339622641509434"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.62699564586357"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>click.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="694037572"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="click" ID="{B3964AEC-FF09-4751-A7AE-33E2F10B079A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Inst 17Death_Stinger" ID="{FDDD25E7-709C-43E3-BE1E-829861D87B0C}" ShortID="231068581">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Inst 17Death_Stinger" ID="{E5EB2E71-E4AA-4112-8FD2-CA56034CBD89}">
+							<Language>SFX</Language>
+							<AudioFile>Inst 17Death_Stinger.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1065826581"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Inst 17Death_Stinger" ID="{E5EB2E71-E4AA-4112-8FD2-CA56034CBD89}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Inst 15SpaceshipSound" ID="{45983089-2183-41F9-B3C6-B4103549AC7B}" ShortID="812688501">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Inst 15SpaceshipSound" ID="{EB7206FA-81DD-428E-AABF-815F9B348560}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="0.147612156295224"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.0492040520984083"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="3.29667149059334"/>
+								<Property Name="TrimEnd" Type="Real64" Value="4.37916063675832"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Inst 15SpaceshipSound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="152411696"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Inst 15SpaceshipSound" ID="{EB7206FA-81DD-428E-AABF-815F9B348560}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Inst 15SpaceshipSound_01" ID="{7FB794AF-E5B7-44F6-A7B8-394724FAFC5C}" ShortID="993649756">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Inst 15SpaceshipSound" ID="{108DFC80-2C30-4C1D-A228-BB0A9DB590B7}">
+							<Language>SFX</Language>
+							<AudioFile>Inst 15SpaceshipSound.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="415502296"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Inst 15SpaceshipSound" ID="{108DFC80-2C30-4C1D-A228-BB0A9DB590B7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<ActorMixer Name="Footsteps" ID="{E9485717-D376-494C-B274-7A034E516E1D}" ShortID="240710798">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="CenterPercentage" Type="int32">
+							<ValueList>
+								<Value>100</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="NPC_Position" ID="{93393B88-49D3-403C-9F1A-13788541A73A}" WorkUnitID="{FB159213-E6FD-4DAB-8C9B-F8748C4617E3}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="FST" ID="{60CBC3DF-3FB5-4C71-9B78-EA0622F58BBA}" ShortID="1053263911">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="FST_03" ID="{6E16632F-9670-4C68-9484-18EA30B70A1F}" ShortID="477222828">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="CenterPercentage" Type="int32">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="NPC_Position" ID="{93393B88-49D3-403C-9F1A-13788541A73A}" WorkUnitID="{FB159213-E6FD-4DAB-8C9B-F8748C4617E3}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FST2" ID="{0AF18912-EC51-4119-99F8-4B986203885E}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.63914059285075"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.78623847775651"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>FST2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="796787227"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="FST2" ID="{0AF18912-EC51-4119-99F8-4B986203885E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FST_02" ID="{355E1C59-54D6-4A74-B8E1-0037F961F08A}" ShortID="267056922">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="CenterPercentage" Type="int32">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="NPC_Position" ID="{93393B88-49D3-403C-9F1A-13788541A73A}" WorkUnitID="{FB159213-E6FD-4DAB-8C9B-F8748C4617E3}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FST2" ID="{7D2D0A5B-5BB3-4A9C-8FFD-8F070EEF0665}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.31960053949221"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.48122297227791"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>FST2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="354255898"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="FST2" ID="{7D2D0A5B-5BB3-4A9C-8FFD-8F070EEF0665}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="FST_01" ID="{F2AC8125-7DDB-4C06-BEC0-59ADABC1FB77}" ShortID="68290220">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="2"/>
+										<Property Name="CenterPercentage" Type="int32">
+											<ValueList>
+												<Value>100</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="NPC_Position" ID="{93393B88-49D3-403C-9F1A-13788541A73A}" WorkUnitID="{FB159213-E6FD-4DAB-8C9B-F8748C4617E3}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings_01" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{BEFE6FA8-AA33-481C-A4A8-BE9489FADC5F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{94A76BBA-0359-4261-952E-A817201AD032}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="FST2" ID="{36FC023F-EF91-49A4-A68B-BADC079B2E75}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.01458503401361"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.19073201467924"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>FST2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="452919440"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="FST2" ID="{36FC023F-EF91-49A4-A68B-BADC079B2E75}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

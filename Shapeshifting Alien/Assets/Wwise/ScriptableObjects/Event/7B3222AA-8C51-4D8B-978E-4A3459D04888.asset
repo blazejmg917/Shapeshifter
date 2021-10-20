@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfecfc7ce37e4ccd8268c1a92ea798d, type: 3}
+  m_Name: 7B3222AA-8C51-4D8B-978E-4A3459D04888
+  m_EditorClassIdentifier: 
+  objectName: Menu_Close
+  id: 626954121
+  guid: 7B3222AA-8C51-4D8B-978E-4A3459D04888

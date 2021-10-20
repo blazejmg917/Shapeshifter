@@ -80,7 +80,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 0678a8b563d6434cb6ba09d77e63d896
     GuidInternal: 
-    m_lastTime: -8585670962104775808
+    m_lastTime: -8585668396654775808
     List:
     - name: Main_01
       guid: 21e428add5bd6040b9d25757b7c6c70b
@@ -108,8 +108,25 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: a5a51a9f64d2294795cac53b2b983439
     GuidInternal: 
-    m_lastTime: -8585670864934775808
+    m_lastTime: -8585668397604775808
     List:
+    - name: Death_Sting
+      guid: 7a452e56026c6242ad72618fe737ad71
+      id: 1969697111
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a5a51a9f64d2294795cac53b2b983439
+      - ElementName: Death_Sting
+        ObjectType: 3
+        guid: 7a452e56026c6242ad72618fe737ad71
+      Path: Events/Default Work Unit/Death_Sting
+      maxAttenuation: 0
+      maxDuration: 22
+      minDuration: 22
     - name: Desert
       guid: 31f63398207a2c429129b4ed274c5fb9
       id: 1850388778
@@ -127,23 +144,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Desert_BG_01
-      guid: 710a8059cc653548a5bb1958b50f8bae
-      id: 468925930
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: a5a51a9f64d2294795cac53b2b983439
-      - ElementName: Desert_BG_01
-        ObjectType: 3
-        guid: 710a8059cc653548a5bb1958b50f8bae
-      Path: Events/Default Work Unit/Desert_BG_01
-      maxAttenuation: 0
-      maxDuration: 23.358562
-      minDuration: 23.358562
     - name: Desert_Music
       guid: 4fc9d31c322b9a4bab931bf0ca556b4a
       id: 3649627898
@@ -178,6 +178,57 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: FST
+      guid: 804124fb2e4a9743aa32332b42764d37
+      id: 881806316
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a5a51a9f64d2294795cac53b2b983439
+      - ElementName: FST
+        ObjectType: 3
+        guid: 804124fb2e4a9743aa32332b42764d37
+      Path: Events/Default Work Unit/FST
+      maxAttenuation: 160
+      maxDuration: 0.176147
+      minDuration: 0.147098
+    - name: Menu_Close
+      guid: aa22327b518c8b4d978e4a3459d04888
+      id: 626954121
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a5a51a9f64d2294795cac53b2b983439
+      - ElementName: Menu_Close
+        ObjectType: 3
+        guid: aa22327b518c8b4d978e4a3459d04888
+      Path: Events/Default Work Unit/Menu_Close
+      maxAttenuation: 0
+      maxDuration: 0.287373
+      minDuration: 0.287373
+    - name: Menu_Open
+      guid: 8de4c228c2d23149bdabf99b6592ef58
+      id: 1287511387
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a5a51a9f64d2294795cac53b2b983439
+      - ElementName: Menu_Open
+        ObjectType: 3
+        guid: 8de4c228c2d23149bdabf99b6592ef58
+      Path: Events/Default Work Unit/Menu_Open
+      maxAttenuation: 0
+      maxDuration: 0.824891
+      minDuration: 0.824891
     - name: Music_Spaceship_01
       guid: 14ca90025029d540a03286ea4ac12a7e
       id: 3033951223
@@ -195,6 +246,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 571.9363
       minDuration: 571.9363
+    - name: Music_Town
+      guid: 06b4e421634d65439a539b684218795f
+      id: 1000251281
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a5a51a9f64d2294795cac53b2b983439
+      - ElementName: Music_Town
+        ObjectType: 3
+        guid: 06b4e421634d65439a539b684218795f
+      Path: Events/Default Work Unit/Music_Town
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: On_Start
       guid: cd68b0719deb9044b6dae9267bdb27be
       id: 2236058871
