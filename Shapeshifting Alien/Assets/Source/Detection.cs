@@ -23,13 +23,17 @@ public class Detection : MonoBehaviour
     private ArrayList enemies = new ArrayList();
     private AggroEnemy currentEnemy = null;
 
+    private Vector3 heading;
+
     void Start()
     {
         ignoreCharacterMask = ~characterMask;
     }
     // The general detection called by an enemy
-    public GameObject Detect()
+    public GameObject Detect(Vector3 heading)
     {
+        this.heading = heading;
+
         //show FOV in gizmos
         ShowView();
 
@@ -87,17 +91,17 @@ public class Detection : MonoBehaviour
     }
     private void ShowView()
     {
-        RaycastHit2D hitM = Physics2D.Raycast(transform.position, transform.up, distance: viewDist, layerMask: ~Physics2D.IgnoreRaycastLayer);
+        RaycastHit2D hitM = Physics2D.Raycast(transform.position, heading, distance: viewDist, layerMask: ~Physics2D.IgnoreRaycastLayer);
         if (hitM.collider != null)
         {
-            Debug.DrawRay(transform.position, transform.up.normalized * hitM.distance, Color.yellow);
+            Debug.DrawRay(transform.position, heading.normalized * hitM.distance, Color.yellow);
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.up.normalized * viewDist, Color.yellow);
+            Debug.DrawRay(transform.position, heading.normalized * viewDist, Color.yellow);
         }
-        Vector3 right = (Quaternion.AngleAxis(viewAngle, transform.forward) * transform.up).normalized * viewDist;
-        Vector3 left = (Quaternion.AngleAxis(-viewAngle, transform.forward) * transform.up).normalized * viewDist;
+        Vector3 right = (Quaternion.AngleAxis(viewAngle, transform.forward) * heading).normalized * viewDist;
+        Vector3 left = (Quaternion.AngleAxis(-viewAngle, transform.forward) * heading).normalized * viewDist;
         RaycastHit2D hitR = Physics2D.Raycast(transform.position, right, distance: viewDist, layerMask: ~Physics2D.IgnoreRaycastLayer);
         if (hitR.collider != null)
         {
@@ -134,7 +138,7 @@ public class Detection : MonoBehaviour
             return false;
         }
         Vector3 toCollider = col.transform.position - transform.position;
-        float angle = Vector3.Angle(toCollider, transform.up);
+        float angle = Vector3.Angle(toCollider, heading);
         //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && toCollider.magnitude <= viewDist && col.gameObject != gameObject)
         {
@@ -160,7 +164,7 @@ public class Detection : MonoBehaviour
             return false;
         }
         Vector3 toCollider = e.GetEnemy().transform.position - transform.position;
-        float angle = Vector3.Angle(toCollider, transform.up);
+        float angle = Vector3.Angle(toCollider, heading);
         //Debug.Log("object at angle " + angle + " from forward");
         if (angle <= viewAngle && toCollider.magnitude <= viewDist && e.GetEnemy().gameObject != gameObject)
         {
@@ -186,7 +190,7 @@ public class Detection : MonoBehaviour
             return 0f;
         }
             Vector3 toCollider = target.transform.position - transform.position;
-            float angle = Vector3.Angle(toCollider, transform.up);
+            float angle = Vector3.Angle(toCollider, heading);
             if (angle <= viewAngle + 90 && toCollider.magnitude <= viewDist && target != gameObject)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, toCollider.normalized, toCollider.magnitude, ignoreCharacterMask + ~Physics2D.IgnoreRaycastLayer);
@@ -194,7 +198,7 @@ public class Detection : MonoBehaviour
                 {
                     Debug.DrawRay(transform.position, toCollider, Color.green);
                 //OnSeeCharacter(target);
-                    return Vector2.SignedAngle(transform.up, toCollider);
+                    return Vector2.SignedAngle(heading, toCollider);
                 }
                 else
                 {

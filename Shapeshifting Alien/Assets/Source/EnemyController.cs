@@ -35,6 +35,9 @@ public class EnemyController : MonoBehaviour
     [Tooltip("whether the enemy is dead or not")]
     public bool isDead = false;
 
+    //the direction the enemy is facing for detection purposes
+    private Vector3 heading;
+
     public Animator animator;
 
     // Start is called before the first frame update
@@ -50,10 +53,10 @@ public class EnemyController : MonoBehaviour
         {
             attackScript = gameObject.GetComponent<EnemyAttack>();
         }
-        upDir = new Vector3(0,0,0);
-        rightDir = new Vector3(0,0,90);
-        downDir = new Vector3(0,0,180);
-        leftDir = new Vector3(0,0,270);
+        upDir = new Vector3(0,1,0);
+        rightDir = new Vector3(1,0,0);
+        downDir = new Vector3(0,-1,0);
+        leftDir = new Vector3(-1,0,0);
         
     }
 
@@ -64,7 +67,7 @@ public class EnemyController : MonoBehaviour
         {
             return;
         }
-        GameObject target = detectScript.Detect();
+        GameObject target = detectScript.Detect(heading);
         if (target != null)
         {
             AttackEnemy(target);
@@ -170,7 +173,7 @@ public class EnemyController : MonoBehaviour
     private void RotateEnemy( bool cw )
     {
         int rotate = 1;
-        if (cw)
+        if (!cw)
         {
             rotate = -1;
         }
@@ -195,6 +198,11 @@ public class EnemyController : MonoBehaviour
         }
         enemyDir = (Directions)newDir;
         animator.SetFloat("Direction", (float)enemyDir);
-        transform.rotation = Quaternion.Euler(EnemyController.GetDirVector(enemyDir));
+        heading = EnemyController.GetDirVector(enemyDir);
+    }
+
+    private void SetRotation(Directions newDir)
+    {
+        SetRotation((int)newDir);
     }
 }

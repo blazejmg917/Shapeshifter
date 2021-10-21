@@ -20,7 +20,8 @@ public class endPoint : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            if (!(col.gameObject.GetComponent<Taskhandler>().NumTasks() >= 4)){
+            Debug.Log("num objects: " + col.gameObject.GetComponent<Taskhandler>().NumTasks());
+            if ((col.gameObject.GetComponent<Taskhandler>().NumTasks() >= 4)){
                 GameManager.Instance().GameOver(true);
             }
         }

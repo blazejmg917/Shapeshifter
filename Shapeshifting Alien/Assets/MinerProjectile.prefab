@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463284, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: throwerForm
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7173871287599463284, guid: c8a85fef9c374e84cb0d2c90c70d6698, type: 3}
       propertyPath: stickDuration
