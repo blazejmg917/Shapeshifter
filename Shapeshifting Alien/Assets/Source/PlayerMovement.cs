@@ -25,20 +25,20 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x != 0)
-            movement.y = 0;
-        else if (movement.y != 0)
-            movement.x = 0;
-        else
-            movement = Vector2.zero;
+        //if (movement.x != 0)
+        //    movement.y = 0;
+        //else if (movement.y != 0)
+        //    movement.x = 0;
+        //else
+        //    movement = Vector2.zero;
 
-        if (movement.x == 0 && movement.y == -1)
+        if (movement.y == -1)
             direction = Direction.Down;
-        else if (movement.x == 0 && movement.y == 1)
+        else if (movement.y == 1)
             direction = Direction.Up;
-        else if (movement.x == -1 && movement.y == 0)
+        else if (movement.x == -1)
             direction = Direction.Left;
-        else if (movement.x == 1 && movement.y == 0)
+        else if (movement.x == 1)
             direction = Direction.Right;
 
         //Set appropriate parameters
