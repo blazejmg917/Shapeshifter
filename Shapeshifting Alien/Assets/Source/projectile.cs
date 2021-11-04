@@ -108,6 +108,8 @@ public class projectile : MonoBehaviour
             rb = gameObject.GetComponent<Rigidbody2D>();
         }
         rb.velocity = heading.normalized * speed;
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg + 90;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
 }

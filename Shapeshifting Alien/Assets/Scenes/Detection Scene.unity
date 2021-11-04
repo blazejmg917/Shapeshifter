@@ -926,6 +926,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3484486084794611252, guid: 40fb4950d6395c540a006e60f2c44d09, type: 3}
+      propertyPath: viewDist
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3484486084794611253, guid: 40fb4950d6395c540a006e60f2c44d09, type: 3}
       propertyPath: cooldown
       value: 0.5
@@ -944,7 +948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3484486084794611403, guid: 40fb4950d6395c540a006e60f2c44d09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.03
+      value: 7.29
       objectReference: {fileID: 0}
     - target: {fileID: 3484486084794611403, guid: 40fb4950d6395c540a006e60f2c44d09, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1797,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8992009808407076189, guid: cdb841c521b610d4a82eed6e73f19a4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8992009808407076189, guid: cdb841c521b610d4a82eed6e73f19a4f, type: 3}
       propertyPath: m_LocalRotation.w
