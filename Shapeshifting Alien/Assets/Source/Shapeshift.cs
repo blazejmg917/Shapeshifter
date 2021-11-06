@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shapeshift : MonoBehaviour
 {
@@ -39,6 +40,18 @@ public class Shapeshift : MonoBehaviour
     [Header("General settings")]
     [Tooltip("The player's detection script for finding new forms")]
     public PlayerFormDetection detectScript;
+
+    [Header("UI settings for getting new forms")]
+    [Tooltip("the UI for getting new forms")]
+    public Canvas newFormCanvas;
+    [Tooltip("the sprite for farmer")]
+    public GameObject farmerImage;
+    [Tooltip("the sprite for miner")]
+    public GameObject minerImage;
+    [Tooltip("the sprite for outlaw")]
+    public GameObject outlawImage;
+    [Tooltip("the sprite for lawman")]
+    public GameObject lawmanImage;
 
     //A dictionary of all forms and their availability
     public Dictionary<Forms, bool> formDict = new Dictionary<Forms, bool>();
@@ -193,6 +206,29 @@ public class Shapeshift : MonoBehaviour
             foreach(Forms newForm in newForms)
             {
                 UnlockForm(newForm);
+                newFormCanvas.gameObject.SetActive(true);
+                GameObject newFormImage;
+                switch (newForm)
+                {
+                    case (Forms.Farmer):
+                        newFormImage = farmerImage;
+                        break;
+                    case (Forms.Miner):
+                        newFormImage = minerImage;
+                        break;
+                    case (Forms.Outlaw):
+                        newFormImage = outlawImage;
+                        break;
+                    case (Forms.Lawman):
+                        newFormImage = lawmanImage;
+                        break;
+                    default:
+                        newFormImage = null;
+                        break;
+
+                        
+                }
+                newFormCanvas.GetComponent<CanvasTimer>().StartTimer(newFormImage);
             }
         }
     }
